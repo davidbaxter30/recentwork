@@ -30,3 +30,9 @@ Very much not complete or optimized.
 
 When finished I hope it will more closely follow the style guide that I like to use. 
 https://github.com/johnpapa/angular-styleguide
+
+
+I am a huge fan of SASS and Jade as far as preprocessors go for HTML/CSS. SASS really helps with organizing the css and keeping it clean and minimal. I am just as comfortable writing with plain ol HTML/CSS as well though. 
+
+http://sass-lang.com/
+http://jade-lang.com/
