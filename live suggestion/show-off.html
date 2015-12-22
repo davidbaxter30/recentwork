@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <!--Jquery 1.11.3 Min-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--Custom Prompt/Alert/Notifications-->
+    <script src="/files/theme/dist/sweetalert.min.js"></script>
+    <!--AngularJs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    <!--ngAminate-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+
+    <!--Custom Prompt/Alert/Notifications Styles-->
+    <link rel="stylesheet" type="text/css" href="/files/theme/dist/sweetalert.css">
+    <!--My Styles-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="show-off.css">
+</head>
+
+
+<body ng-app="suggestion">
+
+    <div class="step-one suggestions-container">
+
+        <div class="number-box">
+            <div class="step-number">1</div>
+            <p> Go ahead and leave a suggestion! It will make the world a better place!</p>
+            <button>Next Step</button>
+        </div>
+
+        <div class="show-off-box suggestion-box" ng-controller="suggestionSubmit as suggestCntrl">
+
+            <h3> Your Suggestion</h3>
+            <form novalidate name="suggestionForm" class="form" ng-submit="addSuggestion(suggestion)">
+
+                <div class="input-group">
+                    <label>Suggestion Title</label>
+                    <input type="text" ng-model="suggestion.Title" required></input>
+                </div>
+
+                <div class="input-group">
+                    <label>Suggestion Type</label>
+                    <select ng-model="suggestion.Type" required>
+                        <option value="macro">Macro</option>
+                        <option value="training">Training</option>
+                        <option value="known">Known</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Tell me more...</label>
+                    <textarea ng-model="suggestion.Body" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>Which Category?</label>
+                    <input maxlength="20" type="text" ng-model="suggestion.Cat"></input>
+                </div>
+
+                <div class="input-group">
+                    <label>Author Email</label>
+                    <input type="email" name="email" ng-model="suggestion.Email" ng-class="{'invalid': suggestionForm.email.$dirty && suggestionForm.email.$invalid}" required></input>
+                </div>
+                <input class="submit" type="submit" value="Submit" />
+
+            </form>
+
+            <section class="preview">
+
+                <h4 class="suggest-title" ng-show="!(suggestion.Title.length + suggestion.Body.length + suggestion.Cat.length) > 0 || (suggestion.Title.length + suggestion.Type.length) > 0 "><span class="preview-placeholder" ng-show="!(suggestion.Title.length + suggestion.Type.length + suggestion.Body.length + suggestion.Cat.length) > 0">PREVIEW</span><span ng-show="suggestion.Title.length > 0">{{suggestion.Title | uppercase}}: </span><span class="capitalize">{{suggestion.Type}}</span></h4>
+                <p class="suggest-body">{{suggestion.Body}}</p>
+                <p class="suggest-cat" ng-show="suggestion.Cat.length > 0"><span class="cat-title">Suggestion Category</span><span class="cat-body"> {{suggestion.Cat}} </span></p>
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <div class="step-two suggestions-container">
+        <div class="number-box">
+            <div class="step-number">2</div>
+            <p>Upvote your suggestion and take a look at those that others have left! You can even look at the ones that were accepted or declined by managers.</p>
+            <button>Next Step</button>
+        </div>
+
+        <div class="show-off-box display-suggestions suggestion-box" ng-controller="suggestionView as suggestCntrl">
+            <div class="control-bar">
+                <div>Search |
+                    <input type="text" ng-model="search" />
+                </div>
+                <div>
+                    <button class="suggestion-button" ng-class="{ 'active': showCurrent.Accepted }" ng-click="chooseCurrent('accepted')"> Accepted | {{acceptedCount}}</button>
+                    <button class="suggestion-button" ng-class="{ 'active': showCurrent.Declined }" ng-click="chooseCurrent('declined')"> Declined | {{declinedCount}}</button>
+                    <button class="suggestion-button" ng-class="{ 'active': !showCurrent.Accepted && !showCurrent.Declined }" ng-click="chooseCurrent('new')"> New | {{newCount}}</button>
+                </div>
+            </div>
+            <section class="preview" ng-class="{ 'declined' : showCurrent.Declined, 'accepted' : showCurrent.Accepted }" ng-show={{showCurrent}} ng-repeat="suggestion in suggestions | filter: showCurrent | filter:search">
+                <div class="vote-row">
+                    <span class="vote" ng-click="downvote(suggestion)" ng-hide="suggestion.Accepted || suggestion.Declined" ng-class="{ 'downvoted': downvoted }"></span>
+                    <span class="vote-number">{{suggestion.Votes}}</span>
+                    <span class="vote up" ng-hide="suggestion.Accepted || suggestion.Declined" ng-click="upvote(suggestion)" ng-class="{ 'upvoted': upvoted }"></span>
+
+                </div>
+                <h4 class="suggest-title"><span>{{suggestion.Title | uppercase}}: </span><span class="capitalize">{{suggestion.Type}}</span></h4>
+                <p class="suggest-body">{{suggestion.Body}}</p>
+                <div class="block">
+                    <p class="suggest-cat" ng-show="suggestion.Cat.length > 0"><span class="cat-title">Suggestion Category</span><span class="cat-body"> {{suggestion.Cat}} </span></p>
+
+
+                    <p class="mbody-block" ng-show="suggestion.mailBody.length > 0">
+                        <span class="mbody-title">Explaination</span><span class="mbody">{{suggestion.mailBody}}</span></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="step-three suggestions-container">
+
+        <div class="number-box">
+            <div class="step-number">3</div>
+            <p>Go ahead and accept a suggestions! If you decline a suggestion you should leave a note for the author. Its just a cool thing to do. Try to decline one. </p>
+            <button>Back to Start</button>
+        </div>
+
+        <div class="show-off-box manage-suggestions" ng-controller="suggestionManage as suggestCntrl">
+            <div class="control-bar">
+                <div>Search |
+                    <input type="text" ng-model="search" />
+                </div>
+                <div>
+                    <button class="suggestion-button" ng-class="{ 'active': showCurrent.Accepted }" ng-click="chooseCurrent('accepted')"> Accepted | {{acceptedCount}}</button>
+                    <button class="suggestion-button" ng-class="{ 'active': showCurrent.Declined }" ng-click="chooseCurrent('declined')"> Declined | {{declinedCount}}</button>
+                    <button class="suggestion-button" ng-class="{ 'active': !showCurrent.Accepted && !showCurrent.Declined }" ng-click="chooseCurrent('new')"> New | {{newCount}}</button>
+                    <button class="suggestion-button" ng-click="resetAll()">Reset All </button>
+                </div>
+            </div>
+
+            <section class="preview" ng-class="{ 'declined' : showCurrent.Declined, 'accepted' : showCurrent.Accepted }" ng-show={{showCurrent}} ng-repeat="suggestion in suggestions | filter: showCurrent | filter:search">
+                <button class="remove" ng-click="removeSuggestion(suggestion)">X</button>
+                <div class="vote-row">
+                    <span class="vote-number">votes | {{suggestion.Votes}}</span>
+                </div>
+                <div class="content-row" ng-class="{'nobody': !(suggestion.mailBody.length > 0)}">
+                    <div class="block">
+                        <h4 class="suggest-title"><span>{{suggestion.Title | uppercase}}: </span><span class="capitalize">{{suggestion.Type}}</span></h4>
+                        <p class="suggest-body">{{suggestion.Body}}</p>
+                        <p class="suggest-cat" ng-show="suggestion.Cat.length > 0"><span>Suggestion Category</span>
+                            <br /> {{suggestion.Cat}}</p>
+                        <p class="suggest-email" ng-show="suggestion.Email.length > 0"><span>Author Email</span>
+                            <br /> {{suggestion.Email}}</p>
+                    </div>
+                    <div class="block mbody-block" ng-show="suggestion.mailBody.length > 0">
+
+                        <p class="suggest-mbody">
+                            <span class="mbody-title">Explaination</span><span class="mbody">{{suggestion.mailBody}}</span></p>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button ng-class="{'accepted' : suggestion.Accepted}" ng-disabled="suggestion.Accepted" ng-hide="suggestion.Declined" ng-click="decide(true, suggestion)" class="accept">Accepted</button>
+                    <button ng-class="{'declined' : suggestion.Declined}" ng-disabled="suggestion.Declined" ng-hide="suggestion.Accepted" ng-click="decide(false, suggestion)" class="decline">Declined</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <!--My Scripts-->
+    <script type="text/javascript" src="suggestApp.js"></script>
+    <script type="text/javascript" src="/files/theme/manage.js"></script>
+    <script type="text/javascript" src="/files/theme/view.js"></script>
+    <script type="text/javascript" src="/files/theme/submit.js"></script>
+    <script type="text/javascript" src="/files/theme/show-off.js"></script>
+</body>
+
+</html>

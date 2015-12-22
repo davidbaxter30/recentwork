@@ -1,0 +1,131 @@
+body {
+    overflow: hidden;
+}
+
+.suggestions-container {
+    display: flex;
+    justify-content: center;
+    width: 95vw;
+    height: 85vh;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.number-box {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 400px;
+    margin: 0px 40px 0px 0px;
+}
+
+.number-box .step-number {
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    /* remove if you don't care about IE8 */
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+    margin: 0px auto;
+    background: #fff;
+    border: 2px solid #2990ea;
+    color: #2990ea;
+    text-align: center;
+    font: 90px Arial, sans-serif;
+}
+
+.number-box p {
+    font: 30px Arial, sans-serif;
+    line-height: 50px;
+    width: 400px;
+    color: #666;
+    padding: 20px;
+    padding-right: 0px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.number-box button {
+    display: block;
+    flex: none;
+    border: 2px solid #2990ea;
+    border-radius: 2px;
+    background-color: #FFF;
+    padding: 10px 20px;
+    color: #3A3D40;
+    padding: 20px 40px;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0px auto;
+}
+
+.number-box button:hover {
+    color: #fff;
+    background-color: #2990ea;
+}
+
+.show-off-box {
+    max-width: 700px;
+    height: 80vh;
+    overflow-x: hidden;
+    margin: auto 0px;
+}
+
+.step-one .show-off-box {
+    max-width: 700px;
+    height: auto;
+    max-height: 80vh;
+    overflow-x: hidden;
+    margin: auto 0px;
+}
+
+.step-one {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.step-two {
+    position: absolute;
+    top: 20px;
+    left: 2000px;
+}
+
+.step-three {
+    position: absolute;
+    top: 2000px;
+    left: 500px;
+}
+
+
+/*Angular repeat animations*/
+
+.preview.ng-enter,
+.preview.ng-leave {
+    -webkit-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    -moz-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    -ms-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    -o-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.preview.ng-enter.ng-enter-active,
+.preview.ng-leave {
+    opacity: 1;
+    right: 0;
+    height: 231px;
+}
+
+.preview.ng-leave.ng-leave-active,
+.preview.ng-enter {
+    opacity: 0;
+    right: -50px;
+    height: 0px;
+}

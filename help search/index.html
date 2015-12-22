@@ -1,0 +1,48 @@
+<html ng-app="jedi">
+
+<head>
+    <title> Macro Search Test </title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container-macro" ng-controller="Article as vm">
+
+        <div class="search-macro">
+            <h5>There are {{(articles | filter:  {title: search.input} |  filter: search.category).length}} articles here total.</h5>
+            <input ng-model="search.input" class="search-macro-input" placeholder="Search" />
+        </div>
+        <div class="main-macros">
+            <div class="categories-macro">
+
+                <ul class="category-list">
+
+                    <li ng-repeat="category in articleCategories | orderBy: '+' " ng-click="changeCategory(category)" ng-class="{currentCategory: search.category == category}" class="category-list-item">{{categoryName(category)}}</li>
+
+                </ul>
+
+            </div>
+            <div class="results-macro">
+
+                <ul>
+                    <li class="article" ng-repeat="article in articles | filter:  {title: search.input, categories: search.category} | limitTo: 6">
+                        <h2>{{article.title}}</h2>
+                        <p><span ng-bind-html="article.body"></span></p>
+                        <span>Article ID: {{article.id}}</span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- inject:js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
