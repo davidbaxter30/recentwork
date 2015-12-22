@@ -1,0 +1,531 @@
+/* Suggestion Stuff */
+
+.suggestion-box * {
+    box-sizing: border-box;
+}
+
+.suggestion-box {
+    position: relative;
+    display: inline-table;
+    margin: 0px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 3px solid #2990ea;
+    border-radius: 3px;
+    width: 300px;
+    height: auto;
+    font-weight: 300;
+    color: #363b3e;
+    font-family: ProximaNova, 'Open Sans', Helvetica, Arial, Verdana, sans-serif;
+}
+
+.suggestion-box h3 {
+    font-weight: 500 !important;
+    font-size: 32px;
+    color: #000!important;
+}
+
+.suggestion-box .preview {
+    position: relative;
+    padding: 0px 15px;
+    padding-bottom: 20px;
+    border: 3px solid #63b6ff;
+    border-radius: 3px;
+    background-color: #f7f7f7;
+    text-align: left;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+/* Let's get this party started */
+
+.suggestion-box .preview::-webkit-scrollbar,
+.display-suggestions::-webkit-scrollbar,
+.manage-suggestions .preview::-webkit-scrollbar,
+.manage-suggestions::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+/* Track */
+
+.suggestion-box .preview::-webkit-scrollbar-track,
+.display-suggestions::-webkit-scrollbar-track,
+.manage-suggestions .preview::-webkit-scrollbar-track,
+.manage-suggestions::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+.suggestion-box .preview::-webkit-scrollbar-thumb,
+.display-suggestions::-webkit-scrollbar-thumb,
+.manage-suggestions .preview::-webkit-scrollbar-thumb,
+.manage-suggestions::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(150, 202, 247);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.suggestion-box .preview::-webkit-scrollbar-thumb:window-inactive,
+.display-suggestions::-webkit-scrollbar-thumb:window-inactive,
+.manage-suggestions .preview::-webkit-scrollbar-thumb:window-inactive,
+.manage-suggestions::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(150, 202, 247, 0.4);
+}
+
+.suggestion-box .preview h4 .preview-placeholder {
+    text-align: center;
+    display: block;
+}
+
+.suggestion-box .preview .suggest-title {
+    border: 3px solid rgb(120, 200, 255);
+    border-top: 0px;
+    border-right: 0px;
+    border-radius: 3px;
+    background-color: inherit;
+    padding: 5px;
+    margin-top: 20px;
+    display: block;
+}
+
+.suggestion-box .preview .suggest-body {
+    text-align: left;
+    margin: 0px;
+    padding: 0px 20px;
+}
+
+.suggestion-box .preview .suggest-cat {
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 0px;
+}
+
+.suggestion-box .preview .suggest-cat span.cat-title {
+    border: 3px solid rgb(120, 200, 255);
+    border-top: 0px;
+    border-right: 0px;
+    border-radius: 3px;
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.suggestion-box .preview .suggest-cat span.cat-body {
+    padding: 10px;
+    padding-bottom: 0px;
+    display: block;
+}
+
+.suggestion-box h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #2990ea;
+    margin: 0px;
+    margin-bottom: 20px
+}
+
+.suggestion-box .form .input-group {
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+}
+
+.suggestion-box .form .input-group label {
+    padding-bottom: 20px;
+}
+
+.suggestion-box .form .input-group textarea {
+    height: 70px;
+}
+
+.suggestion-box .form .input-group textarea,
+input,
+select {
+    width: 240px;
+    border: 2px solid #CCC;
+    border-radius: 2px;
+    background-color: #FFF;
+    padding: 5px;
+    color: #3A3D40;
+    padding-left: 16px;
+    font-size: 16px;
+}
+
+.suggestion-box .form .input-group input.invalid {
+    border-color: #ff7676!important;
+}
+
+.suggestion-box .form .input-group textarea:focus,
+input:focus,
+select:focus {
+    border-color: #63b6ff;
+    outline: none;
+}
+
+.suggestion-box .form .submit {
+    width: 100px;
+    height: 50px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+/*Suggestion Viewing and Voting!*/
+
+.display-suggestions {
+    position: relative;
+    display: inline-block;
+    margin: 0px 20px;
+    padding: 20px!important;
+    background-color: #f0f0f0;
+    border: 3px solid #2990ea;
+    border-radius: 3px;
+    max-width: 900px;
+    width: auto;
+    min-width: 460px;
+    max-height: 700px;
+    ;
+    min-height: 300px;
+    font-weight: 300;
+    color: #363b3e;
+    font-family: ProximaNova, 'Open Sans', Helvetica, Arial, Verdana, sans-serif;
+    overflow: scroll;
+    flex-grow: 2;
+}
+
+.display-suggestions .control-bar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.display-suggestions .control-bar div {
+    display: inline-block;
+    min-width: 300px;
+}
+
+.display-suggestions .holder {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 20px;
+    padding-bottom: 0px;
+    overflow-y: scroll;
+}
+
+.display-suggestions .vote-row {
+    display: flex;
+    justify-content: center;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.display-suggestions .vote-row .vote {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    padding: 0px;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 3px 5px;
+    border: 3px solid #2990ea;
+    cursor: pointer;
+}
+
+.display-suggestions .vote-row .vote:after {
+    content: 'V';
+    position: absolute;
+    font-weight: 600;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.display-suggestions .vote-row .vote-number {
+    box-sizing: border-box;
+    background-color: #F6F6F6;
+    padding: 5px 0px;
+    width: 35px;
+    height: 35px;
+    line-height: 22px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin: 0px 5px;
+    border: 3px solid #2990ea;
+}
+
+.display-suggestions .vote-row .vote.up {
+    transform: rotate(180deg);
+}
+
+.display-suggestions .vote-row .upvoted {
+    background-color: forestgreen;
+    color: #fff;
+}
+
+.display-suggestions .vote-row .downvoted {
+    background-color: lightcoral;
+    color: #fff;
+}
+
+.display-suggestions .preview.declined {
+    border-color: rgba(255, 90, 90, 0.77);
+}
+
+.display-suggestions .preview.declined .suggest-title,
+.display-suggestions .preview.declined .suggest-cat span {
+    border-color: rgba(255, 90, 90, 0.77);
+}
+
+.suggestion-box .preview .block {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.suggestion-box .preview.declined .block .mbody-block {
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-bottom: 0px;
+}
+
+.suggestion-box .preview.declined .block .mbody-block span.mbody-title {
+    border: 3px solid rgba(255, 90, 90, 0.77);
+    border-top: 0px;
+    border-right: 0px;
+    border-radius: 3px;
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+    background-color: transparent;
+}
+
+.suggestion-box .preview.declined .block .mbody-block span.mbody {
+    padding: 10px;
+    display: block;
+}
+
+.display-suggestions .preview.accepted {
+    border-color: rgba(46, 177, 46, 0.77);
+}
+
+.display-suggestions .preview.accepted .suggest-title,
+.display-suggestions .preview.accepted .suggest-cat span {
+    border-color: rgba(46, 177, 46, 0.77);
+}
+
+
+/*Suggestion Viewing and Voting!*/
+
+.manage-suggestions {
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 3px solid #2990ea;
+    border-radius: 3px;
+    max-width: 950px;
+    min-width: 400px;
+    height: 700px;
+    min-height: 300px;
+    font-weight: 300;
+    color: #363b3e;
+    font-family: ProximaNova, 'Open Sans', Helvetica, Arial, Verdana, sans-serif;
+    overflow: scroll;
+}
+
+.manage-suggestions .preview {
+    position: relative;
+    padding: 0px 15px;
+    padding-bottom: 20px;
+    border: 3px solid #63b6ff;
+    border-radius: 3px;
+    background-color: #f7f7f7;
+    text-align: left;
+    margin-top: 20px;
+    transition: all 2s ease-out;
+}
+
+.manage-suggestions .preview .remove {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    vertical-align: baseline;
+    display: block;
+    line-height: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: red;
+    border: none;
+    cursor: pointer;
+}
+
+.manage-suggestions .preview .vote-row {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-top: 10px;
+}
+
+.manage-suggestions .preview .vote-row .vote-number {
+    border: 2px solid #63b6ff;
+    border-radius: 2px;
+    background-color: #63b6ff;
+    padding: 10px 20px;
+    color: #FFF;
+    padding-left: 20px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.manage-suggestions .preview .button-row {
+    display: flex;
+    justify-content: center;
+}
+
+.manage-suggestions .preview .button-row button,
+.manage-suggestions .suggestion-button,
+.display-suggestions .suggestion-button {
+    border: 2px solid #CCC;
+    border-radius: 2px;
+    background-color: #FFF;
+    padding: 10px 20px;
+    color: #3A3D40;
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 5px 10px 0px 10px;
+}
+
+.manage-suggestions .preview .button-row button:focus,
+.manage-suggestions .suggestion-button:focus,
+.display-suggestions .suggestion-button:focus {
+    border-color: #63b6ff;
+    outline: none;
+}
+
+.manage-suggestions .suggestion-button.active,
+.display-suggestions .suggestion-button.active {
+    border-color: #63b6ff;
+    outline: none;
+}
+
+.manage-suggestions .preview .suggest-cat {
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.manage-suggestions .preview .suggest-cat span {
+    text-decoration: underline;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.manage-suggestions .preview .suggest-email {
+    padding: 10px;
+    margin: 0px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.manage-suggestions .preview .suggest-email span {
+    text-decoration: underline;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.manage-suggestions .preview .suggest-body {
+    padding-left: 20px;
+    margin: 0px;
+    border-left: 1px solid #2990ea;
+}
+
+.manage-suggestions .preview .dismissed . {
+    padding-left: 20px;
+    margin-bottom: 0px;
+    border-left: 1px solid #2990ea;
+}
+
+
+/*Accepted and declined suggestions*/
+
+.manage-suggestions .preview.declined,
+.manage-suggestions .preview.accepted,
+.manage-suggestions .preview.accepted .button-row button.accepted {
+    border-color: rgba(46, 177, 46, 0.77);
+}
+
+.manage-suggestions .preview.declined,
+.manage-suggestions .preview.declined,
+.manage-suggestions .preview.declined .button-row button.declined {
+    border-color: rgba(255, 90, 90, 0.77)!important;
+}
+
+.manage-suggestions .preview.declined .block {
+    display: block;
+    width: 49%;
+    flex-basis: 1;
+}
+
+.preview.declined .block .suggest-mbody {
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 90, 90, 0.77);
+}
+
+.preview.declined .block .suggest-mbody span.mbody-title {
+    display: block;
+    width: auto;
+    height: auto;
+    color: #FFF;
+    padding: 20px;
+    font-weight: 200;
+    font-size: 18px;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(255, 90, 90, 0.77);
+}
+
+.preview.declined .block .suggest-mbody span.mbody {
+    padding: 20px;
+    display: block;
+}
+
+.manage-suggestions .preview.declined .content-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
+
+.manage-suggestions .preview.declined .content-row.nobody {
+    justify-content: flex-start;
+}
+
+.manage-suggestions .preview.declined .content-row.nobody .block {
+    width: auto;
+}
