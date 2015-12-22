@@ -26,3 +26,7 @@ Features:
 2. Get: Retrieves the information from the apropriete API 
 3. Category Generator: Find the tags or categetories and generates an array to be used with an NgRepeat as the category list. 
 
+Very much not complete or optimized. 
+
+When finished I hope it will more closely follow the style guide that I like to use. 
+https://github.com/johnpapa/angular-styleguide
