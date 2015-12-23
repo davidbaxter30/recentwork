@@ -34,5 +34,16 @@ https://github.com/johnpapa/angular-styleguide
 
 I am a huge fan of SASS and Jade as far as preprocessors go for HTML/CSS. SASS really helps with organizing the css and keeping it clean and minimal. I am just as comfortable writing with plain ol HTML/CSS as well though. 
 
-http://sass-lang.com/
-http://jade-lang.com/
+- http://sass-lang.com/
+- http://jade-lang.com/
+
+
+
+//////////////////
+Things I'm Excited about and actively studying. 
+//////////////////
+
+-More Angular Of Course! 
+-Testing with jasmine and protractor
+-Generally writting clean code and organization
+-Patterns in Javascript and Angular. 
