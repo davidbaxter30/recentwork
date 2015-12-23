@@ -47,3 +47,11 @@ Things I'm Excited about and actively studying.
 -Testing with jasmine and protractor
 -Generally writting clean code and organization
 -Patterns in Javascript and Angular. 
+
+//////////////////
+Things I'm Excited about and not actively studying. 
+//////////////////
+
+- mongoDB( and other Cassandra style databases )
+- react
+- Ionic.io
