@@ -2,7 +2,8 @@
 
 <head>
     <title> Macro Search Test </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../resources/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/release/angular-toastr.css" />
 
 </head>
 
@@ -27,7 +28,7 @@
             <div class="results-macro">
 
                 <ul>
-                    <li class="article" ng-repeat="article in articles | filter:  {title: search.input, categories: search.category} | limitTo: 6">
+                    <li class="article" ng-repeat="article in articles | filter:  {title: search.input, categories: search.category} | limitTo: 3">
                         <h2>{{article.title}}</h2>
                         <p><span ng-bind-html="article.body"></span></p>
                         <span>Article ID: {{article.id}}</span>
@@ -41,7 +42,15 @@
 
     <!-- inject:js -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script type="text/javascript" src="../resources/release/angular-toastr.tpls.js"></script>
+    
+    <script src="../app.main.js"></script>
+    
+    <script src="../services/logger.js"></script>
+    <script src="../services/exception.js"></script>
+    <script src="../services/factory.js"></script>
+
     <script src="app.js"></script>
 </body>
 

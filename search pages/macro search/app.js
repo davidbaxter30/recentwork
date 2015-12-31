@@ -2,45 +2,48 @@
     'use strict';
 
     angular
-        .module('jedi', ['ngAnimate'])
-        .controller('Macro', ['$http', '$scope', macro]);
+        .module('jedi')
+        .controller('Macro', ['$http', '$scope', 'dataservice','logger', macro]);
 
-    function macro($http, $scope) {
+    function macro($http, $scope, dataservice, logger) {
         $scope.macros = [];
-        $scope.macroCount = 0;
         $scope.macroObject = [];
-        $scope.macros = [];
         $scope.macros.failed = [];
         $scope.macroCategories = [];
         $scope.categoryName = categoryName;
         $scope.changeCategory = changeCategories;
         $scope.search = {};
+        
+        
 
-        $http({
-                method: 'GET',
-                url: 'macros.json'
-            })
-            .then(function (response) {
-                var status = response.status;
-                var macroObject = response.data;
-                var macroCount = response.data.macros.length;
-                $scope.macroCount = macroCount;
-                $scope.macroObject = macroObject;
-                $scope.constructMacros();
-            }, function (response) {
-                var status = response.status;
-                var macroObject = response.data || "request failed";
-                console.log('status: ' + status);
-                console.log('data: ' + macroObject);
-            });
+//        $http({
+//                method: 'GET',
+//                url: 'macros.json'
+//            })
+//            .then(function (response) 
+//                var macroObject = response.data;
+//                var macroCount = response.data.macros.length;
+//                $scope.macroCount = macroCount;
+//                $scope.macroObject = macroObject;
+//                $scope.constructMacros();
+//            }, function (response) {
+//                var status = response.status;
+//                var macroObject = response.data || "request failed";
+//                console.log('status: ' + status);
+//                console.log('data: ' + macroObject);
+//            });
 
         $scope.constructMacros = function () {
             console.log('Starting Constructor');
-
-
-
+            
+            dataservice.getMacros().then( function (data) {
+                $scope.macroObject = data; 
+            
+            
             $scope.macroObject.macros.forEach(setValues);
             setCategories();
+                
+            })
 
             function setValues(element, index) {
                 macro = {};
@@ -88,6 +91,8 @@
                 };
             };
         };
+        
+        $scope.constructMacros(); 
 
         function categoryName(category) {
             var nameFixed = category.replace(/\_/g, ' ');

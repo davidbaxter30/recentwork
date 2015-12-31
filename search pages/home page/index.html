@@ -1,0 +1,78 @@
+<html ng-app="jedi">
+
+<head>
+    <title> home Search </title>
+    <link rel="stylesheet" href="../resources/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/release/angular-toastr.css" />
+</head>
+
+<body>
+
+    <div class="container-home" ng-controller="Home as hmCntrl">
+        <div class="search-macro">
+<!--            <h5>There are {{(macros | filter: {title: search.input} |  filter: search.category).length}} macros here total.</h5>-->
+            <input ng-model="hmCntrl.search.input" class="search-macro-input" placeholder="Search" />
+        </div>
+        
+        <div class='home-results'>
+        
+        <section class="macros" ng-controller="Macro as vm">
+            
+            <div class="results-macro">
+                <h2 class="c-title">Macros</h2>
+
+                <ul>
+                    <li ng-repeat="macro in macros | filter: {title: hmCntrl.search.input} | limitTo: 6">
+                        <h2>{{macro.title}}</h2>
+                        <p>{{macro.content}}</p> <span>Macro ID: {{macro.id}}</span>
+                    </li>
+                </ul>
+
+            </div>
+        
+        </section>
+        
+        <section class="help" ng-controller="Article as vm">
+            <h2 class="c-title">Articles</h2>
+            
+            <div class="results-macro">
+
+                <ul>
+                    <li class="article" ng-repeat="article in articles | filter:  {title: hmCntrl.search.input} | limitTo: 3">
+                        <h2>{{article.title}}</h2>
+                        <p><span ng-bind-html="article.body"></span></p>
+                        <span>Article ID: {{article.id}}</span>
+                    </li>
+                </ul>
+
+            </div>
+        
+        </section>
+        
+        <section class="bugs">
+            <h2 class="c-title">Bugs</h2>
+        
+        </section>
+    
+    </div>
+        
+    </div>
+
+    <!-- inject:js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script type="text/javascript" src="../resources/release/angular-toastr.tpls.js"></script>
+    
+    <script src="../app.main.js"></script>
+    
+    <script src="../services/logger.js"></script>
+    <script src="../services/exception.js"></script>
+    <script src="../services/factory.js"></script>
+
+    <script src="app.js"></script>
+    <script src="../help%20search/app.js"></script>
+    <script src="../macro%20search/app.js"></script>
+    <!--<script src="../known%2520issues/app.js"></script>-->
+</body>
+
+</html>

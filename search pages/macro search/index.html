@@ -1,0 +1,56 @@
+<html ng-app="jedi">
+
+<head>
+    <title> Macro Search Test </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/release/angular-toastr.css" />
+
+</head>
+
+<body>
+
+    <div class="container-macro" ng-controller="Macro as vm">
+
+        <div class="search-macro">
+            <h5>There are {{(macros | filter: {title: search.input} |  filter: search.category).length}} macros here total.</h5>
+            <input ng-model="search.input" class="search-macro-input" placeholder="Search" />
+        </div>
+        <div class="main-macros">
+            <div class="categories-macro">
+
+                <ul class="category-list">
+
+                    <li ng-repeat="category in macroCategories | orderBy: '+' " ng-click="changeCategory(category)" ng-class="{currentCategory: search.category == category}" class="category-list-item">{{categoryName(category)}}</li>
+
+                </ul>
+
+            </div>
+            <div class="results-macro">
+
+                <ul>
+                    <li ng-repeat="macro in macros | filter: {title: search.input} |  filter: search.category | limitTo: 6">
+                        <h2>{{macro.title}}</h2>
+                        <p>{{macro.content}}</p> <span>Macro ID: {{macro.id}}</span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- inject:js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script type="text/javascript" src="../resources/release/angular-toastr.tpls.js"></script>
+    
+    <script src="../app.main.js"></script>
+    
+    <script src="../services/logger.js"></script>
+    <script src="../services/exception.js"></script>
+    <script src="../services/factory.js"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,746 @@
+[
+  {
+    "FIELD1":"Jabwire ID #",
+    "FIELD2":"Link",
+    "FIELD3":"Title (hover for description)",
+    "FIELD4":"Date Reported",
+    "FIELD5":"Reporter (Jabwire)",
+    "FIELD6":"Notes/Comments"
+  },
+  {
+    "FIELD1":"7660",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/7660",
+    "FIELD3":"Lost ability to sort form submissions in Carbon",
+    "FIELD4":"10/1/2015",
+    "FIELD5":"Barbara",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"7684",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/7684",
+    "FIELD3":"Recent blog comments show \"0\"",
+    "FIELD4":"10/1/2015",
+    "FIELD5":"Elisabeth",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"7736",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/7736",
+    "FIELD3":"[Blogs] Unable to delete blog comments on Weebly blog",
+    "FIELD4":"10/1/2015",
+    "FIELD5":"Adam B.",
+    "FIELD6":"Discovered on weebly.com blog - may be affecting others intermittently (can't reproduce consistently on other blog comments)."
+  },
+  {
+    "FIELD1":"7894",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/7894",
+    "FIELD3":"Changing a field on a contact form wipes out previous data",
+    "FIELD4":"10/6/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"7920",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/7920",
+    "FIELD3":"Can't activate elements added above another element in Firefox 41.0.1",
+    "FIELD4":"10/6/2015",
+    "FIELD5":"Elisabeth",
+    "FIELD6":"Video: https://www.dropbox.com/s/sagjejujn7f36ws/textinfirefox.mov?dl=0"
+  },
+  {
+    "FIELD1":"7974",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/7974",
+    "FIELD3":"Contact form entries show as invalid date when language flag is not set to English",
+    "FIELD4":"10/8/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8011",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8011",
+    "FIELD3":"[Mobile] Images Uploaded to Gallery Element Using iOS App for iPad Are Not Full-Sized",
+    "FIELD4":"10/8/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8044",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8044",
+    "FIELD3":"Payment Window Blocked?",
+    "FIELD4":"10/9/2015",
+    "FIELD5":"Jeff G.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8051",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8051",
+    "FIELD3":"[Apps Center] Color picker's text box cropping text in firefox.",
+    "FIELD4":"10/10/2015",
+    "FIELD5":"Frank",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8061",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8061",
+    "FIELD3":"Slideshow Element Added in Tabs Element on 2nd or 3rd Tab Does Not Appear on Published Site",
+    "FIELD4":"10/12/2015",
+    "FIELD5":"Helen",
+    "FIELD6":"See 8060 also"
+  },
+  {
+    "FIELD1":"8073",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8073",
+    "FIELD3":"[themes][responsive] Categories being cut off when viewed on phones",
+    "FIELD4":"10/12/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8092",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8092",
+    "FIELD3":"[Chrome Extension] Weebly Dashboard Extension for Chrome not loading form entries",
+    "FIELD4":"10/13/2015",
+    "FIELD5":"Frank",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8108",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8108",
+    "FIELD3":"[App Center] [App Center Carousel] The text on the Google Apps card in the featured app carousel is white text on a white background.",
+    "FIELD4":"10/13/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8110",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8110",
+    "FIELD3":"[Safari] [Bookmarks] [Icon] Weebly's icon on Safari's favorite sites does not match Weebly's styling.",
+    "FIELD4":"10/13/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8120",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8120",
+    "FIELD3":"[Blog] Editing the 'Post Title' for a draft or live post is difficult in firefox",
+    "FIELD4":"10/14/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8136",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8136",
+    "FIELD3":"[App Center] [Platform Elements] [Mobile] Weebly's app center elements are not displaying correctly in the mobile app.",
+    "FIELD4":"10/15/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Apps that are showing incorrectly: FAQ, Call-out box, Code block, Tabs and Accordian\nAll other Weebly made apps show correctly."
+  },
+  {
+    "FIELD1":"8162",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8162",
+    "FIELD3":"Date Format display issue.",
+    "FIELD4":"10/15/2015",
+    "FIELD5":"Frank",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8175",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8175",
+    "FIELD3":"[4.0.3.629] The 'Social Icons' element does not initially display when added to an existing column, The page must be refreshed in order to see it",
+    "FIELD4":"10/16/2015",
+    "FIELD5":"Neil",
+    "FIELD6":"Only affects Android devices. To see the Social Icon element. the user will need to exit and re-enter the editor. After this, the element works fine."
+  },
+  {
+    "FIELD1":"8181",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8181",
+    "FIELD3":"Paris nav menu not showing - intermittent issue",
+    "FIELD4":"10/16/2015",
+    "FIELD5":"Frank",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8184",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8184",
+    "FIELD3":"[Product Element] White bar being added to product images",
+    "FIELD4":"10/16/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8194",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8194",
+    "FIELD3":"[pages] Category page defaults to first category on list / shows no products",
+    "FIELD4":"10/16/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8196",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8196",
+    "FIELD3":"[Dashboard][Stats] Carbon shows only 20 \"Top pages\" -- Old dashboard shows all URLs",
+    "FIELD4":"10/16/2015",
+    "FIELD5":"Justin",
+    "FIELD6":"not sure if bug or as intended"
+  },
+  {
+    "FIELD1":"8197",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8197",
+    "FIELD3":"Toggle-able Social Icons are not actionable across multiple themes",
+    "FIELD4":"10/16/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8200",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8200",
+    "FIELD3":"Can't change background in Bradley and Resolution theme for customer",
+    "FIELD4":"10/17/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8208",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8208",
+    "FIELD3":"Content Sections of Standard Pages Not Allowing Editing on Specific Pages",
+    "FIELD4":"10/17/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8224",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8224",
+    "FIELD3":"[Superset] Background not fixed in Chrome on Splash Pages",
+    "FIELD4":"10/19/2015",
+    "FIELD5":"Brandon G-H.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8233",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8233",
+    "FIELD3":"[Mobile] [Editor] [Element Icons] Element icon image sizes are inconsistent.",
+    "FIELD4":"10/19/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects Android devices."
+  },
+  {
+    "FIELD1":"8235",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8235",
+    "FIELD3":"[Mobile] [Editor] [Text] [Link] Users are unable to link text.",
+    "FIELD4":"10/19/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects Android devices. *This bug is closed and is being tracked as a Sprint Task.* - Dave S"
+  },
+  {
+    "FIELD1":"8326",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8326",
+    "FIELD3":"[Editor][Store] Products can't be re-arranged via category page on pages 2+",
+    "FIELD4":"10/23/2015",
+    "FIELD5":"Justin",
+    "FIELD6":"made minor as I'm only aware of the one report, and products can still be re-arranged via the STORE -> Categories page"
+  },
+  {
+    "FIELD1":"8423",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8423",
+    "FIELD3":"form placeholder languages don't update on site lang change",
+    "FIELD4":"10/28/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8440",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8440",
+    "FIELD3":"[Theme][Impact] Logos with transparent background aren't re-sized upon SAVE",
+    "FIELD4":"10/29/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8444",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8444",
+    "FIELD3":"[Editor][Font] Font color doesn’t changes.",
+    "FIELD4":"10/29/2015",
+    "FIELD5":"Frank",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8465",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8465",
+    "FIELD3":"[Theme][Collection][Mobile View] Mobile version shows default image that can't be edited",
+    "FIELD4":"10/30/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8525",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8525",
+    "FIELD3":"\"Refund failed\" or \"Error refunding PayPal payment\" when trying to refund Paypal charges in Admin",
+    "FIELD4":"11/3/20105",
+    "FIELD5":"George",
+    "FIELD6":"Cannot refund Paypal charges - linked to non-U.S. international accounts."
+  },
+  {
+    "FIELD1":"8552",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8552",
+    "FIELD3":"\"Form entries this month\" on dashboard not accurately reflecting entries",
+    "FIELD4":"11/4/2015",
+    "FIELD5":"Dave",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8555",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8555",
+    "FIELD3":"[Mobile] [Editor] [Buttons] Buttons do not display correctly in mobile on the Paper theme.",
+    "FIELD4":"11/4/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Affects android and iOS."
+  },
+  {
+    "FIELD1":"6441",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/6441",
+    "FIELD3":"[Mobile App] [Themes] Scrolling broken for splash layout for some themes on iPad",
+    "FIELD4":"11/4/2015",
+    "FIELD5":"Ben",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8598",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8598",
+    "FIELD3":"[Editor] [Upgrade] Upgrading twice from the editor opens two purchase windows instead of just one.",
+    "FIELD4":"11/6/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Possibly a better explination: If a user upgrades inside of the editor. and then immediately upgrade again, it opens up 2 payment windows instead of just one."
+  },
+  {
+    "FIELD1":"8617",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8617",
+    "FIELD3":"When the language is set to Japanese in the editor, clicking to view the invoice is not showing Japanese.",
+    "FIELD4":"11/9/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":"When the language is set to Japanese in the editor, clicking to view the invoice is not showing Japanese. For example, it shows \"Weebly Pro Siteãè³¼å¥ããã ããããã¨ããããã¾ãï¼\"."
+  },
+  {
+    "FIELD1":"8502",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8502",
+    "FIELD3":"Theme CSS doesn't load when changing a theme (on mobile)",
+    "FIELD4":"11/9/2015",
+    "FIELD5":"Ryan",
+    "FIELD6":"AKA site looks broken if a user attempts to change theme on mobile. Only affects iOS devices. If user completly quits and re-opens the app, the site should load normally and look correct. Affects all but these themes: Birdseye, Cento, Lucent"
+  },
+  {
+    "FIELD1":"8692",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8692",
+    "FIELD3":"[Mobile] [Button] The default Web Link text for all buttons is \"javascript;;\"",
+    "FIELD4":"11/11/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects iOS users."
+  },
+  {
+    "FIELD1":"8709",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8709",
+    "FIELD3":"Order History and Receipts Do Not Display Associated Site for Upgraded Services",
+    "FIELD4":"11/11/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8760",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8760",
+    "FIELD3":"Urban Church theme slideshow headers showing small in editor",
+    "FIELD4":"11/14/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8482",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8482",
+    "FIELD3":"[Mobile] [Blog] [Drafts] When publishing a post, the cancel button does nothing.",
+    "FIELD4":"11/18/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8676",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8676",
+    "FIELD3":"[Mobile] [Editor] Users are unable to scroll on the iCloud Drive menu if iCloud is not set up on their device.",
+    "FIELD4":"11/18/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8723",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8723",
+    "FIELD3":"[Mobile] [Editor] [Apps] Accordion and FAQ elements cause the web view to not update in mobile.",
+    "FIELD4":"11/18/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8725",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8725",
+    "FIELD3":"[Mobile] [Editor] [Apps) Unable to move, delete or edit the Code Block on mobile.",
+    "FIELD4":"11/18/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"",
+    "FIELD2":"",
+    "FIELD3":"",
+    "FIELD4":"",
+    "FIELD5":"",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8840",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8840",
+    "FIELD3":"#8840 [Editor][Contact Form] Tooltips don't respond on mobile - leads to display weirdness on phones",
+    "FIELD4":"11/20/2015",
+    "FIELD5":"Justin N.",
+    "FIELD6":"Only work-around is to delete content in the \"Instructions\" box for each field of the form"
+  },
+  {
+    "FIELD1":"8839",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8839",
+    "FIELD3":"Elements below footer cannot be deleted",
+    "FIELD4":"11/20/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8863",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8863",
+    "FIELD3":"Unable to add a page, getting unresponsive script error",
+    "FIELD4":"11/21/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8866",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8866",
+    "FIELD3":"Lightbox Images giving error on live site",
+    "FIELD4":"11/22/2015",
+    "FIELD5":"Joe H",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"7337",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/7337",
+    "FIELD3":"[Editor] [Element Settings] File Element doesn't properly center",
+    "FIELD4":"9/28/2015",
+    "FIELD5":"Devon Reed",
+    "FIELD6":"Only affects Android devices."
+  },
+  {
+    "FIELD1":"8899",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8899",
+    "FIELD3":"[Editor][Theme Gallery]\"Preview\" button for Birdseye, Cento and Lucent not responding",
+    "FIELD4":"11/24/2015",
+    "FIELD5":"Joe",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8902",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8902",
+    "FIELD3":"[Dashboard]Active service still shows a deleted billing method to be used for renewal",
+    "FIELD4":"11/24/2015",
+    "FIELD5":"Joe",
+    "FIELD6":"\"Payment Method\" area of Account>Services is displaying a card that has been removed from the account entirely. Seems to be cosmetic, but still alarming."
+  },
+  {
+    "FIELD1":"8918",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8918",
+    "FIELD3":"Gap in products in mobile version of site",
+    "FIELD4":"11/25/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8934",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8934",
+    "FIELD3":"Chrome theme - unable to edit the contact form checkbox options in Firefox",
+    "FIELD4":"11/28/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":"When using Firefox and trying to edit the option items in a check box on a contact form, they are not able to be edited."
+  },
+  {
+    "FIELD1":"8945",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8945",
+    "FIELD3":"Cannot change the name of Category pages",
+    "FIELD4":"11/30/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":"When adding category pages, the pages are not being displayed when changing the text. They only show up as \"Category\". I tested this in my site using the Unite theme and also the Clean Lines theme as well so it doesn't appear to be theme specific."
+  },
+  {
+    "FIELD1":"8946",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8946",
+    "FIELD3":"[Theme]Checkout button inaccessible with 10+ items in cart when clicking and dragging the scrollbar",
+    "FIELD4":"11/30/2015",
+    "FIELD5":"Joe",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"8977",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8977",
+    "FIELD3":"[Desktop] [Editor] While on the Splash pages on the Paper theme, Paragraph Titles are stuck as italicized if it is edited.",
+    "FIELD4":"12/1/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects paragraph titles on sites that are on the Paper theme, and are on a Splash page. Users must change text to be italisized, then they must attempt to change the font of their paragraph text for this bug to show up."
+  },
+  {
+    "FIELD1":"8982",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8982",
+    "FIELD3":"[Link Page] Users are able to access and edit content on an External Link page if it is their homepage.",
+    "FIELD4":"12/1/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Happens in mobile and on desktop"
+  },
+  {
+    "FIELD1":"9016",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9016",
+    "FIELD3":"[Mobile] [Product] Changes made to the order of product options do not always save.",
+    "FIELD4":"12/2/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects iOS devices"
+  },
+  {
+    "FIELD1":"9039",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9039",
+    "FIELD3":"[Editor][Commerce] Product with 1417 SKUs can not be deleted",
+    "FIELD4":"12/3/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9019",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9019",
+    "FIELD3":"Image appearing above image + text element on published site",
+    "FIELD4":"12/2/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9064",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9064",
+    "FIELD3":"[Commerce][Categories] setting headline text on one category page saves to ALL category pages",
+    "FIELD4":"12/7/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9070",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9070",
+    "FIELD3":"Billing messages missing in old Dashboard",
+    "FIELD4":"12/7/2015",
+    "FIELD5":"Adam",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9082",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9082",
+    "FIELD3":"[Desktop] [Product Page] Accessing Product pages from the pages tab causes the page to go into a reload loop.",
+    "FIELD4":"12/7/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Navigating to product pages on published site and via the site navigation are not affected."
+  },
+  {
+    "FIELD1":"9085",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9085",
+    "FIELD3":"[v4.0.7.645] [iOS] [QA] [Non-Responsive] The preview image and dashboard images do not load for non responsive themes.",
+    "FIELD4":"12/7/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects mobile devices."
+  },
+  {
+    "FIELD1":"9121",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9121",
+    "FIELD3":" [QA] [Mobile / Desktop] [Change Font] [Buttons] Changing button size or color from the design tab only changes the landing page button.",
+    "FIELD4":"12/8/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Affects mobile and desktop."
+  },
+  {
+    "FIELD1":"9014",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9014",
+    "FIELD3":"[4.0.7.643] app crashes if a user deletes the product variation of the product they currently have connected",
+    "FIELD4":"12/8/2015",
+    "FIELD5":"Jenny",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9123",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9123",
+    "FIELD3":"[4.0.8.646] [QA] [iOS] The product image does not show the correct images for image variations in the editor or in the site preview.",
+    "FIELD4":"12/8/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9132",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9132",
+    "FIELD3":"Product Image Thumbnails for Additional Product Images Cropping Issue in Display on Published Site",
+    "FIELD4":"12/9/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9133",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9133",
+    "FIELD3":"Designer Site Cannot Delete or Edit Products on preview.editmysite.com/IKBHN6",
+    "FIELD4":"12/9/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9135",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9135",
+    "FIELD3":" [QA] [iOS] [4.0.8.646] [Blog] Editing Blog columns will cause a \"Conflict Error\" and the post will close out. Elements in the blog post will be duplicated when re-opened.",
+    "FIELD4":"12/9/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only impact iOS users."
+  },
+  {
+    "FIELD1":"9136",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9136",
+    "FIELD3":"[Theme] [Aroma] Background flickers on splash pages when published site is loading in browser in Firefox",
+    "FIELD4":"12/9/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9138",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9138",
+    "FIELD3":"Can't Add Access to Store Pages in Designer Client Dashboard for cancuntoursandshuttle.com",
+    "FIELD4":"12/9/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9143",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9143",
+    "FIELD3":"[QA] [Desktop] [Theme] [Paper] Linked text looks the same as normal text by default.",
+    "FIELD4":"12/9/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9144",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9144",
+    "FIELD3":"[4.0.8.646] [QA] [Mobile] [HD Video] When uploading a video to an HD video element, there is no indication that your video is loading, or how long it will take.",
+    "FIELD4":"12/9/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects the mobile app."
+  },
+  {
+    "FIELD1":"8660",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/8660",
+    "FIELD3":"[Designer] [Editor] There is no padding on the \"Go Live\" confirmation box.",
+    "FIELD4":"11/11/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9152",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9152",
+    "FIELD3":"[v4.0.8.647] [QA] [iOS] [Gallery] There is no labeling on the Top and Bottom Spacing options for some elements.",
+    "FIELD4":"11/11/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9154",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9154",
+    "FIELD3":"[App Center][Accordion] Slideshow within Accordion element won't show in live.",
+    "FIELD4":"12/10/2015",
+    "FIELD5":"Frank",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9156",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9156",
+    "FIELD3":"[Theme] [Stripes] Background image for landing page no longer appears on mobile after it is zoomed",
+    "FIELD4":"12/10/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9157",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9157",
+    "FIELD3":"Customers unable to publish to domain names, stuck on .weebly.com subdomain",
+    "FIELD4":"12/11/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9164",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9164",
+    "FIELD3":"[v4.0.8.648] [QA] [iOS] [Unordered Lists] Making text into an unordered or ordered list, makes the text font size increase by a large amount.",
+    "FIELD4":"12/11/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects mobile users."
+  },
+  {
+    "FIELD1":"9165",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9165",
+    "FIELD3":"[v4.0.6.648] [QA] [iOS] [Move elements] Moving elements between pages causes a conflict error, and the element is not moved.",
+    "FIELD4":"12/11/2015",
+    "FIELD5":"Daniela",
+    "FIELD6":"Only affects mobile users."
+  },
+  {
+    "FIELD1":"9170",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9170",
+    "FIELD3":"[Theme] [Stripes] Cannot change site title/logo within the site editor without using the Settings tab",
+    "FIELD4":"12/11/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9174",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9174",
+    "FIELD3":"[v4.0.7] Formatting no longer appears correctly on mobile preview in app after changing themes to Slick",
+    "FIELD4":"12/12/2015",
+    "FIELD5":"Helen",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9180",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9180",
+    "FIELD3":"Unable to scroll past Wisconsin in subregions in shipping settings using Firefox",
+    "FIELD4":"12/14/2015",
+    "FIELD5":"Peter N.",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9181",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9181",
+    "FIELD3":"Multiple accounts cannot attach any .weebly.com to a site",
+    "FIELD4":"12/14/2015",
+    "FIELD5":"Justin",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9191",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9191",
+    "FIELD3":"\"&\" in site title, site decription, and keywords showing up as \"&amp;\" in source code",
+    "FIELD4":"12/15/2015",
+    "FIELD5":"Dave S",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9203",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9203",
+    "FIELD3":"Some users receiving \"You've published too recently. Please wait, and try again.\" error when publishing",
+    "FIELD4":"12/16/2015",
+    "FIELD5":"Dave S",
+    "FIELD6":""
+  },
+  {
+    "FIELD1":"9208",
+    "FIELD2":"https://www.jabwire.com/projects/2-weebly/bugs/9208",
+    "FIELD3":"Facebook comment button unresponsive",
+    "FIELD4":"12/16/2015",
+    "FIELD5":"Joe",
+    "FIELD6":""
+  }
+]
