@@ -1,0 +1,115 @@
+<html ng-app="jedi">
+
+<head>
+    <title> home Search </title>
+
+    <link rel="stylesheet" type="text/css" href="../resources/waves.min.css" />
+    <link rel="stylesheet" href="../resources/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/release/angular-toastr.css" />
+</head>
+
+<body>
+
+    <div class="container-home" ng-controller="Home as home">
+        <div class="search-macro">
+            <input ng-hide="!(home.searchField)" ng-model="home.search.input" class="search-macro-input" placeholder="Click here to Search Jedi Archives" />
+            <button ng-hide="!(home.backButton)" ui-sref="home" class="back">&lang;&lang; Back to Search</button>
+        </div>
+
+        <div class="results">
+            <div class='home-results'>
+
+                <section class="macros" ng-controller="Macro as vm">
+
+                    <h2 class="c-title">Macros</h2>
+                    <span class="count">{{(macros | filter: {title: home.search.input} | limitTo: home.search.limitMacro).length}} out of {{(macros | filter: {title: home.search.input}).length}} are showing</span>
+                    <div class="results-block">
+                        <div ng-hide="!loading" class='results-loading'><img src="../resources/ring-alt.svg" /></div>
+                        <ul>
+                            <li class="item waves-block" ui-sref="macro({ID: macro.id})" ng-repeat="macro in macros | filter: {title: home.search.input} | limitTo: home.search.limitMacro">
+                                <h2 class="item-title">{{macro.title}}</h2>
+                                <span style="float: left;">Macro ID: {{macro.id}}</span><span style="float: right;">View Details</span>
+                            </li>
+                            <li ng-if="(macros | filter: {title: home.search.input} | limitTo: home.search.limitMacro).length != (macros | filter: {title: home.search.input}).length" class="item waves-block view-more" ng-click="home.viewMore('macro')">
+                                <h2 class="item-title">View more</h2>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="help" ng-controller="Article as vm">
+
+                    <h2 class="c-title">Articles</h2>
+                    <span class="count">{{(articles | filter: {title: home.search.input} | limitTo: home.search.limitHelp).length}} out of {{(articles | filter: {title: home.search.input}).length}} are showing</span>
+                    <div class="results-block">
+                        <div ng-hide="!loading" class='results-loading'><img src="../resources/ring-alt.svg" /></div>
+                        <ul>
+                            <li class="item waves-block" ui-sref="article({ID: article.id})" ng-repeat="article in articles | filter:  {title: home.search.input} | limitTo: home.search.limitHelp">
+                                <h2 class="item-title">{{article.title}}</h2>
+                                <span style="float: left;">Article ID: {{article.id}}</span><span style="float: right;">View Details</span>
+                            </li>
+                            <li ng-if="(articles | filter: {title: home.search.input} | limitTo: home.search.limitHelp).length != (articles | filter: {title: home.search.input}).length" class="item waves-block view-more" ng-click="home.viewMore('help')">
+                                <h2 class="item-title">View more</h2>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="bugs" ng-controller="Bugs as vm">
+                    <h2 class="c-title">Bugs</h2>
+                    <span class="count">{{(bugs | filter: home.search.input | limitTo: home.search.limitBugs).length}} out of {{(bugs | filter:  home.search.input).length}} are showing</span>
+                    <div class="results-block">
+                        <div ng-hide="!loading" class='results-loading'><img src="../resources/ring-alt.svg" /></div>
+                        <ul>
+                            <li class="item waves-block" ui-sref="bug({ID: bug.id})" ng-repeat="bug in bugs | orderBy:'-id' | filter: home.search.input | limitTo: home.search.limitBugs">
+                                <h2 class="item-title">{{bug.title}}</h2>
+                                <span style="float: left;">Bug ID: {{bug.id}}</span><span style="float: right;">View Details</span>
+                            </li>
+                            <li ng-if="(bugs | filter:  home.search.input | limitTo: home.search.limitBugs).length != (bugs | filter:  home.search.input).length" class="item waves-block view-more" ng-click="home.viewMore('bug')">
+                                <h2 class="item-title">View more</h2>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+
+
+            <div class="view-selection">
+                <div ui-view></div>
+                <br>
+                <button ng-hide="!(home.backButton)" ui-sref="home" class="back">&lang;&lang; Back to Search</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- inject:js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../resources/release/angular-toastr.tpls.js"></script>
+    <script type="text/javascript" src="../resources/waves.min.js"></script>
+
+    <script>
+        Waves.attach('.item', []);
+        Waves.attach('.back', ['waves-button', 'waves-float']);
+        Waves.init();
+    </script>
+
+    <script src="../app.main.js"></script>
+
+    <script src="../services/logger.js"></script>
+    <script src="../services/exception.js"></script>
+    <script src="../services/factory.js"></script>
+
+    <script src="app.js"></script>
+    <script src="../help%20search/app.js"></script>
+    <script src="../macro%20search/app.js"></script>
+    <script src="../known%20issues/app.js"></script>
+    <script src="../home-page/viewCntl.js"></script>
+</body>
+
+</html>

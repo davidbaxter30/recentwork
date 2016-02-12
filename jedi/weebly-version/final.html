@@ -1,0 +1,1834 @@
+<style>
+    .wcustomhtml {
+        overflow: visible!important;
+    }
+    
+    .waves-effect {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent
+    }
+    
+    .waves-effect .waves-ripple {
+        position: absolute;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+        opacity: 0;
+        background: rgba(0, 0, 0, .2);
+        background: -webkit-radial-gradient(rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, .3) 40%, rgba(0, 0, 0, .4) 50%, rgba(0, 0, 0, .5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -o-radial-gradient(rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, .3) 40%, rgba(0, 0, 0, .4) 50%, rgba(0, 0, 0, .5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -moz-radial-gradient(rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, .3) 40%, rgba(0, 0, 0, .4) 50%, rgba(0, 0, 0, .5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: radial-gradient(rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, .3) 40%, rgba(0, 0, 0, .4) 50%, rgba(0, 0, 0, .5) 60%, rgba(255, 255, 255, 0) 70%);
+        -webkit-transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+        transition: all .5s ease-out;
+        -webkit-transition-property: -webkit-transform, opacity;
+        -moz-transition-property: -moz-transform, opacity;
+        -o-transition-property: -o-transform, opacity;
+        transition-property: transform, opacity;
+        -webkit-transform: scale(0) translate(0, 0);
+        -moz-transform: scale(0) translate(0, 0);
+        -ms-transform: scale(0) translate(0, 0);
+        -o-transform: scale(0) translate(0, 0);
+        transform: scale(0) translate(0, 0);
+        pointer-events: none
+    }
+    
+    .waves-effect.waves-light .waves-ripple {
+        background: rgba(255, 255, 255, .4);
+        background: -webkit-radial-gradient(rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, .3) 40%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -o-radial-gradient(rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, .3) 40%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -moz-radial-gradient(rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, .3) 40%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: radial-gradient(rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, .3) 40%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .5) 60%, rgba(255, 255, 255, 0) 70%)
+    }
+    
+    .waves-effect.waves-classic .waves-ripple {
+        background: rgba(0, 0, 0, .2)
+    }
+    
+    .waves-effect.waves-classic.waves-light .waves-ripple {
+        background: rgba(255, 255, 255, .4)
+    }
+    
+    .waves-notransition {
+        -webkit-transition: none!important;
+        -moz-transition: none!important;
+        -o-transition: none!important;
+        transition: none!important
+    }
+    
+    .waves-button,
+    .waves-circle {
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-mask-image: -webkit-radial-gradient(circle, #fff 100%, #000 100%)
+    }
+    
+    .waves-button,
+    .waves-button:hover,
+    .waves-button:visited,
+    .waves-button-input {
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: none;
+        outline: 0;
+        color: inherit;
+        background-color: transparent;
+        font-size: 1em;
+        line-height: 1em;
+        text-align: center;
+        text-decoration: none;
+        z-index: 1
+    }
+    
+    .waves-button {
+        padding: .85em 1.1em;
+        border-radius: .2em
+    }
+    
+    .waves-button-input {
+        margin: 0;
+        padding: .85em 1.1em
+    }
+    
+    .waves-input-wrapper {
+        border-radius: .2em;
+        vertical-align: bottom
+    }
+    
+    .waves-input-wrapper.waves-button {
+        padding: 0
+    }
+    
+    .waves-input-wrapper .waves-button-input {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1
+    }
+    
+    .waves-circle {
+        text-align: center;
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+        border-radius: 50%
+    }
+    
+    .waves-float {
+        -webkit-mask-image: none;
+        -webkit-box-shadow: 0 1px 1.5px 1px rgba(0, 0, 0, .12);
+        box-shadow: 0 1px 1.5px 1px rgba(0, 0, 0, .12);
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms;
+        -o-transition: all 300ms;
+        transition: all 300ms
+    }
+    
+    .waves-float:active {
+        -webkit-box-shadow: 0 8px 20px 1px rgba(0, 0, 0, .3);
+        box-shadow: 0 8px 20px 1px rgba(0, 0, 0, .3)
+    }
+    
+    .waves-block {
+        display: block
+    }
+    
+    a.waves-effect .waves-ripple {
+        z-index: -1
+    }
+    
+    .toast-title {
+        font-weight: bold;
+    }
+    
+    .toast-message {
+        word-wrap: break-word;
+    }
+    
+    .toast-message a,
+    .toast-message label {
+        color: #FFFFFF;
+    }
+    
+    .toast-message a:hover {
+        color: #CCCCCC;
+        text-decoration: none;
+    }
+    
+    .toast-close-button {
+        position: relative;
+        right: -0.3em;
+        top: -0.3em;
+        float: right;
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFFFFF;
+        -webkit-text-shadow: 0 1px 0 #ffffff;
+        text-shadow: 0 1px 0 #ffffff;
+        opacity: 0.8;
+    }
+    
+    .toast-close-button:hover,
+    .toast-close-button:focus {
+        color: #000000;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.4;
+    }
+    /*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+    
+    button.toast-close-button {
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+    }
+    
+    .toast-top-center {
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+    
+    .toast-bottom-center {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    
+    .toast-top-full-width {
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+    
+    .toast-bottom-full-width {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    
+    .toast-top-left {
+        top: 12px;
+        left: 12px;
+    }
+    
+    .toast-top-right {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .toast-bottom-right {
+        right: 12px;
+        bottom: 12px;
+    }
+    
+    .toast-bottom-left {
+        bottom: 12px;
+        left: 12px;
+    }
+    
+    #toast-container {
+        position: fixed;
+        z-index: 999999;
+        /*overrides*/
+    }
+    
+    #toast-container * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    #toast-container > div {
+        position: relative;
+        overflow: hidden;
+        margin: 0 0 6px;
+        padding: 15px 15px 15px 50px;
+        width: 300px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border-radius: 3px 3px 3px 3px;
+        background-position: 15px center;
+        background-repeat: no-repeat;
+        -moz-box-shadow: 0 0 12px #999999;
+        -webkit-box-shadow: 0 0 12px #999999;
+        box-shadow: 0 0 12px #999999;
+        color: #FFFFFF;
+        opacity: 0.8;
+    }
+    
+    #toast-container >:hover {
+        -moz-box-shadow: 0 0 12px #000000;
+        -webkit-box-shadow: 0 0 12px #000000;
+        box-shadow: 0 0 12px #000000;
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #toast-container > .toast-info {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
+    }
+    
+    #toast-container > .toast-error {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=") !important;
+    }
+    
+    #toast-container > .toast-success {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==") !important;
+    }
+    
+    #toast-container > .toast-warning {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=") !important;
+    }
+    
+    #toast-container.toast-top-center > div,
+    #toast-container.toast-bottom-center > div {
+        width: 300px;
+        margin: auto;
+    }
+    
+    #toast-container.toast-top-full-width > div,
+    #toast-container.toast-bottom-full-width > div {
+        width: 96%;
+        margin: auto;
+    }
+    
+    .toast {
+        background-color: #030303;
+    }
+    
+    .toast-success {
+        background-color: #51A351;
+    }
+    
+    .toast-error {
+        background-color: #BD362F;
+    }
+    
+    .toast-info {
+        background-color: #2F96B4;
+    }
+    
+    .toast-warning {
+        background-color: #F89406;
+    }
+    
+    .toast-progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: #000000;
+        opacity: 0.4;
+    }
+    /*Animations*/
+    
+    .toast {
+        opacity: 1 !important;
+    }
+    
+    .toast.ng-enter {
+        opacity: 0 !important;
+        transition: opacity .3s linear;
+    }
+    
+    .toast.ng-enter.ng-enter-active {
+        opacity: 1 !important;
+    }
+    
+    .toast.ng-leave {
+        opacity: 1;
+        transition: opacity .3s linear;
+    }
+    
+    .toast.ng-leave.ng-leave-active {
+        opacity: 0 !important;
+    }
+    /*Responsive Design*/
+    
+    @media all and (max-width: 240px) {
+        #toast-container > div {
+            padding: 8px 8px 8px 50px;
+            width: 11em;
+        }
+        #toast-container .toast-close-button {
+            right: -0.2em;
+            top: -0.2em;
+        }
+    }
+    
+    @media all and (min-width: 241px) and (max-width: 480px) {
+        #toast-container > div {
+            padding: 8px 8px 8px 50px;
+            width: 18em;
+        }
+        #toast-container .toast-close-button {
+            right: -0.2em;
+            top: -0.2em;
+        }
+    }
+    
+    @media all and (min-width: 481px) and (max-width: 768px) {
+        #toast-container > div {
+            padding: 15px 15px 15px 50px;
+            width: 25em;
+        }
+    }
+    
+    .search-macro {
+        padding: 20px;
+        background: #e0e0e0;
+        border-radius: 3px;
+        max-height: 65px;
+        overflow: hidden;
+    }
+    
+    .search-macro h5 {
+        margin-top: 0px;
+        padding-left: 60px;
+    }
+    
+    .search-macro-input {
+        width: 90%;
+        background: #f5ffff;
+        border-width: 0px;
+        line-height: 50px;
+        border-bottom: 3px solid #CCC;
+        background-color: #FFF;
+        padding: 5px;
+        color: #3A3D40;
+        font-size: 45px;
+        display: block;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    
+    input:focus,
+    select:focus {
+        border-color: #63b6ff;
+        outline: none;
+    }
+    
+    .main-macros {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .main-macros .categories-macro {
+        width: 250px;
+        flex: none;
+    }
+    
+    .results-macro {
+        flex-grow: 2;
+    }
+    
+    .results-macro ul li.article {
+        list-style: none;
+        padding: 0px;
+        border-bottom: 3px solid #000;
+    }
+    
+    .results-macro ul li img {
+        max-width: 50vw;
+    }
+    
+    .category-macro ul li h2 {
+        line-height: 30px;
+        font-size: 20px;
+    }
+    
+    .category-list-item {
+        background: #63b6ff;
+        box-shadow: 0 1px 2px #999;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        height: auto;
+        line-height: 20px;
+        list-style: none;
+        margin: 10px 0;
+        padding: 10px 5px;
+        text-align: center;
+        transform: translateZ(0);
+        transition: all 0.25s ease-in;
+        width: auto;
+    }
+    
+    .category-list-item:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    .currentCategory {
+        background: #0e8eff;
+    }
+    /*home page*/
+    
+    .container-home {}
+    
+    .container-home .results {
+        position: relative;
+        height: auto;
+    }
+    
+    .home-results {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: left 0.5s ease;
+    }
+    
+    .home-results.inactive {
+        left: -101%;
+    }
+    
+    .home-results section {
+        flex-grow: 1;
+        width: 30%;
+        margin: 5px;
+    }
+    
+    .home-results .results ul li img {
+        max-width: 100%;
+    }
+    
+    .home-results .results ul li iframe {
+        max-width: 100%;
+        max-height: 200px;
+    }
+    
+    .results-block ul li.item {
+        list-style: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-bottom: 5px;
+        border: solid rgba(41, 144, 234, 0.42);
+        border-width: 1px 4px 4px 1px;
+        border-radius: 6px;
+        background: rgba(41, 144, 234, 0.12);
+        transition: all 0.5s ease-out;
+    }
+    
+    .results-block ul li.item:hover {
+        background: rgba(41, 144, 234, 0.42);
+    }
+    
+    .results-block ul li.item h2.item-title {
+        font-size: 0.9em;
+        line-height: 1.1em;
+    }
+    
+    .results-block ul li.item.view-more {
+        text-align: center;
+        padding: 10px auto;
+    }
+    
+    .results-block ul li img {
+        max-width: 50vw;
+    }
+    
+    .results-block .results-loading,
+    .item-loading {
+        margin-top: 200px;
+        height: 100px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .results-block .results-loading img,
+    .item-loading {
+        height: 100px;
+        width: 100px;
+        display: inline;
+    }
+    
+    .item-loading {
+        width: auto;
+        margin: 50px;
+        display: block;
+    }
+    
+    .home-results h2.c-title {
+        text-align: center;
+        padding: 10px 20px;
+        margin: 5px 10px;
+        background: #2990ea;
+        border-radius: 20px;
+        color: aliceblue;
+    }
+    
+    .home-results .count {
+        display: block;
+        text-align: center;
+    }
+    
+    .view-selection {
+        position: absolute;
+        width: 0px;
+        overflow: hidden;
+        left: 100%;
+        top: 0px;
+        transition: left 0.5s ease;
+    }
+    
+    .view-selection.active {
+        left: 0%;
+        width: 80vw;
+        padding: 10px 40px;
+    }
+    
+    .view-selection .selection img,
+    .view-selection .selection iframe {
+        max-width: 60vw;
+    }
+    
+    .view-selection .selection {
+        padding: 0 60px;
+        margin: 0px;
+    }
+    
+    .back {
+        background-color: #2990ea;
+        color: aliceblue;
+        font-size: 20px;
+        margin: 0;
+    }
+    
+    .back:hover {
+        background-color: #2990ea;
+        color: aliceblue;
+        font-size: 20px;
+        margin: 0;
+    }
+    /*Angular repeat animations*/
+    
+    .results .home-results .ng-enter,
+    .results .home-results .ng-leave {
+        -webkit-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+        -moz-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+        -ms-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+        -o-transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+        transition: 400ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .results .home-results .ng-enter.ng-enter-active,
+    .results .home-results .ng-leave {
+        opacity: 1;
+        right: 0;
+    }
+    
+    .results .home-results .ng-leave.ng-leave-active,
+    .results .home-results .ng-enter {
+        opacity: 0;
+        right: -50px;
+    }
+
+</style>
+
+<div class="container-home" ng-app="jedi" ng-controller="Home as home">
+    <div class="search-macro">
+        <input ng-hide="!(home.searchField)" ng-model="home.search.input" class="search-macro-input" placeholder="Click here to Search Jedi Archives" />
+        <button ng-hide="!(home.backButton)" ui-sref="home" class="back">&lang;&lang; Back to Search</button>
+    </div>
+
+    <div class="results">
+        <div class='home-results'>
+
+            <section class="macros" ng-controller="Macro as vm">
+
+                <h2 class="c-title">Macros</h2>
+                <span class="count">{{(macros | filter: {title: home.search.input} | limitTo: home.search.limitMacro).length}} out of {{(macros | filter: {title: home.search.input}).length}} are showing</span>
+                <div class="results-block">
+                    <div ng-hide="!loading" class='results-loading'><img src="/files/theme/ring-alt.svg" /></div>
+                    <ul>
+                        <li class="item waves-block" ui-sref="macro({ID: macro.id})" ng-repeat="macro in macros | filter: {title: home.search.input} | limitTo: home.search.limitMacro">
+                            <h2 class="item-title">{{macro.title}}</h2>
+                            <span style="float: left;">Macro ID: {{macro.id}}</span><span style="float: right;">View Details</span>
+                        </li>
+                        <li ng-if="(macros | filter: {title: home.search.input} | limitTo: home.search.limitMacro).length != (macros | filter: {title: home.search.input}).length" class="item waves-block view-more" ng-click="home.viewMore('macro')">
+                            <h2 class="item-title">View more</h2>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="help" ng-controller="Article as vm">
+
+                <h2 class="c-title">Articles</h2>
+                <span class="count">{{(articles | filter: {title: home.search.input} | limitTo: home.search.limitHelp).length}} out of {{(articles | filter: {title: home.search.input}).length}} are showing</span>
+                <div class="results-block">
+                    <div ng-hide="!loading" class='results-loading'><img src="/files/theme/ring-alt.svg" /></div>
+                    <ul>
+                        <li class="item waves-block" ui-sref="article({ID: article.id})" ng-repeat="article in articles | filter:  {title: home.search.input} | limitTo: home.search.limitHelp">
+                            <h2 class="item-title">{{article.title}}</h2>
+                            <span style="float: left;">Article ID: {{article.id}}</span><span style="float: right;">View Details</span>
+                        </li>
+                        <li ng-if="(articles | filter:  {title: home.search.input} | limitTo: home.search.limitHelp).length != (articles | filter: {title: home.search.input}).length" class="item waves-block view-more" ng-click="home.viewMore('help')">
+                            <h2 class="item-title">View more</h2>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="bugs" ng-controller="Bugs as vm">
+                <h2 class="c-title">Bugs</h2>
+                <span class="count">{{(bugs | filter: home.search.input | limitTo: home.search.limitBugs).length}} out of {{(bugs | filter: home.search.input).length}} are showing</span>
+                <div class="results-block">
+                    <div ng-hide="!loading" class='results-loading'><img src="/files/theme/ring-alt.svg" /></div>
+                    <ul>
+                        <li class="item waves-block" ui-sref="bug({ID: bug.id})" ng-repeat="bug in bugs | orderBy: '-id' | filter: home.search.input | limitTo: home.search.limitBugs">
+                            <h2 class="item-title">{{bug.title}}</h2>
+                            <span style="float: left;">Bug ID: {{bug.id}}</span><span style="float: right;">View Details</span>
+                        </li>
+                        <li ng-if="(bugs | filter:  home.search.input | limitTo: home.search.limitBugs).length != (bugs | filter: home.search.input).length" class="item waves-block view-more" ng-click="home.viewMore('bug')">
+                            <h2 class="item-title">View more</h2>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+
+
+        <div class="view-selection">
+            <div ui-view></div>
+            <br>
+            <button ng-hide="!(home.backButton)" ui-sref="home" class="back">&lang;&lang; Back to Search</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- inject:js -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!--    <script type="text/javascript" src="../resources/release/angular-toastr.tpls.js"></script>-->
+
+<script>
+    ! function() {
+        "use strict";
+
+        function t(t, e, s, n, o, r, a) {
+            function i(t) {
+                if (1 !== arguments.length || t)
+                    if (t) g(t.toastId);
+                    else
+                        for (var e = 0; e < O.length; e++) g(O[e].toastId)
+            }
+
+            function l(t, e, s) {
+                var n = m().iconClasses.error;
+                return d(n, t, e, s)
+            }
+
+            function c(t, e, s) {
+                var n = m().iconClasses.info;
+                return d(n, t, e, s)
+            }
+
+            function u(t, e, s) {
+                var n = m().iconClasses.success;
+                return d(n, t, e, s)
+            }
+
+            function p(t, e, s) {
+                var n = m().iconClasses.warning;
+                return d(n, t, e, s)
+            }
+
+            function g(e, s) {
+                function n(t) {
+                    for (var e = 0; e < O.length; e++)
+                        if (O[e].toastId === t) return O[e]
+                }
+
+                function o() {
+                    return !O.length
+                }
+                var i = n(e);
+                i && !i.deleting && (i.deleting = !0, i.isOpened = !1, t.leave(i.el).then(function() {
+                    i.scope.options.onHidden && i.scope.options.onHidden(!!s, i), i.scope.$destroy();
+                    var t = O.indexOf(i);
+                    delete T[i.scope.message], O.splice(t, 1);
+                    var e = r.maxOpened;
+                    e && O.length >= e && O[e - 1].open.resolve(), o() && (h.remove(), h = null, B = a.defer())
+                }))
+            }
+
+            function d(t, e, s, n) {
+                return angular.isObject(s) && (n = s, s = null), v({
+                    iconClass: t,
+                    message: e,
+                    optionsOverride: n,
+                    title: s
+                })
+            }
+
+            function m() {
+                return angular.extend({}, r)
+            }
+
+            function f(e) {
+                if (h) return B.promise;
+                h = angular.element("<div></div>"), h.attr("id", e.containerId), h.addClass(e.positionClass), h.css({
+                    "pointer-events": "auto"
+                });
+                var s = angular.element(document.querySelector(e.target));
+                if (!s || !s.length) throw "Target for toasts doesn't exist";
+                return t.enter(h, s).then(function() {
+                    B.resolve()
+                }), B.promise
+            }
+
+            function v(s) {
+                function r() {
+                    return d.autoDismiss && d.maxOpened && O.length > d.maxOpened
+                }
+
+                function i(t, e, s) {
+                    function n(e) {
+                        return s[e] ? function() {
+                            s[e](t)
+                        } : void 0
+                    }
+                    s.allowHtml ? (t.scope.allowHtml = !0, t.scope.title = o.trustAsHtml(e.title), t.scope.message = o.trustAsHtml(e.message)) : (t.scope.title = e.title, t.scope.message = e.message), t.scope.toastType = t.iconClass, t.scope.toastId = t.toastId, t.scope.extraData = s.extraData, t.scope.options = {
+                        extendedTimeOut: s.extendedTimeOut,
+                        messageClass: s.messageClass,
+                        onHidden: s.onHidden,
+                        onShown: n("onShown"),
+                        onTap: n("onTap"),
+                        progressBar: s.progressBar,
+                        tapToDismiss: s.tapToDismiss,
+                        timeOut: s.timeOut,
+                        titleClass: s.titleClass,
+                        toastClass: s.toastClass
+                    }, s.closeButton && (t.scope.options.closeHtml = s.closeHtml)
+                }
+
+                function l() {
+                    function t(t) {
+                        for (var e = ["containerId", "iconClasses", "maxOpened", "newestOnTop", "positionClass", "preventDuplicates", "preventOpenDuplicates", "templates"], s = 0, n = e.length; n > s; s++) delete t[e[s]];
+                        return t
+                    }
+                    var e = {
+                        toastId: C++,
+                        isOpened: !1,
+                        scope: n.$new(),
+                        open: a.defer()
+                    };
+                    return e.iconClass = s.iconClass, s.optionsOverride && (angular.extend(d, t(s.optionsOverride)), e.iconClass = s.optionsOverride.iconClass || e.iconClass), i(e, s, d), e.el = c(e.scope), e
+                }
+
+                function c(t) {
+                    var s = angular.element("<div toast></div>"),
+                        n = e.get("$compile");
+                    return n(s)(t)
+                }
+
+                function u() {
+                    return d.maxOpened && O.length <= d.maxOpened || !d.maxOpened
+                }
+
+                function p() {
+                    var t = d.preventDuplicates && s.message === w,
+                        e = d.preventOpenDuplicates && T[s.message];
+                    return t || e ? !0 : (w = s.message, T[s.message] = !0, !1)
+                }
+                var d = m();
+                if (!p()) {
+                    var v = l();
+                    if (O.push(v), r())
+                        for (var B = O.slice(0, O.length - d.maxOpened), x = 0, $ = B.length; $ > x; x++) g(B[x].toastId);
+                    return u() && v.open.resolve(), v.open.promise.then(function() {
+                        f(d).then(function() {
+                            if (v.isOpened = !0, d.newestOnTop) t.enter(v.el, h).then(function() {
+                                v.scope.init()
+                            });
+                            else {
+                                var e = h[0].lastChild ? angular.element(h[0].lastChild) : null;
+                                t.enter(v.el, h, e).then(function() {
+                                    v.scope.init()
+                                })
+                            }
+                        })
+                    }), v
+                }
+            }
+            var h, C = 0,
+                O = [],
+                w = "",
+                T = {},
+                B = a.defer(),
+                x = {
+                    clear: i,
+                    error: l,
+                    info: c,
+                    remove: g,
+                    success: u,
+                    warning: p
+                };
+            return x
+        }
+        angular.module("toastr", []).factory("toastr", t), t.$inject = ["$animate", "$injector", "$document", "$rootScope", "$sce", "toastrConfig", "$q"]
+    }(),
+    function() {
+        "use strict";
+        angular.module("toastr").constant("toastrConfig", {
+            allowHtml: !1,
+            autoDismiss: !1,
+            closeButton: !1,
+            closeHtml: "<button>&times;</button>",
+            containerId: "toast-container",
+            extendedTimeOut: 1e3,
+            iconClasses: {
+                error: "toast-error",
+                info: "toast-info",
+                success: "toast-success",
+                warning: "toast-warning"
+            },
+            maxOpened: 0,
+            messageClass: "toast-message",
+            newestOnTop: !0,
+            onHidden: null,
+            onShown: null,
+            onTap: null,
+            positionClass: "toast-top-right",
+            preventDuplicates: !1,
+            preventOpenDuplicates: !1,
+            progressBar: !1,
+            tapToDismiss: !0,
+            target: "body",
+            templates: {
+                toast: "directives/toast/toast.html",
+                progressbar: "directives/progressbar/progressbar.html"
+            },
+            timeOut: 5e3,
+            titleClass: "toast-title",
+            toastClass: "toast"
+        })
+    }(),
+    function() {
+        "use strict";
+
+        function t(t) {
+            function e(t, e, s, n) {
+                function o() {
+                    var t = (i - (new Date).getTime()) / a * 100;
+                    e.css("width", t + "%")
+                }
+                var r, a, i;
+                n.progressBar = t, t.start = function(t) {
+                    r && clearInterval(r), a = parseFloat(t), i = (new Date).getTime() + a, r = setInterval(o, 10)
+                }, t.stop = function() {
+                    r && clearInterval(r)
+                }, t.$on("$destroy", function() {
+                    clearInterval(r)
+                })
+            }
+            return {
+                replace: !0,
+                require: "^toast",
+                templateUrl: function() {
+                    return t.templates.progressbar
+                },
+                link: e
+            }
+        }
+        angular.module("toastr").directive("progressBar", t), t.$inject = ["toastrConfig"]
+    }(),
+    function() {
+        "use strict";
+
+        function t() {
+            this.progressBar = null, this.startProgressBar = function(t) {
+                this.progressBar && this.progressBar.start(t)
+            }, this.stopProgressBar = function() {
+                this.progressBar && this.progressBar.stop()
+            }
+        }
+        angular.module("toastr").controller("ToastController", t)
+    }(),
+    function() {
+        "use strict";
+
+        function t(t, e, s, n) {
+            function o(s, o, r, a) {
+                function i(t) {
+                    return a.startProgressBar(t), e(function() {
+                        a.stopProgressBar(), n.remove(s.toastId)
+                    }, t, 1)
+                }
+
+                function l() {
+                    s.progressBar = !1, a.stopProgressBar()
+                }
+
+                function c() {
+                    return s.options.closeHtml
+                }
+                var u;
+                if (s.toastClass = s.options.toastClass, s.titleClass = s.options.titleClass, s.messageClass = s.options.messageClass, s.progressBar = s.options.progressBar, c()) {
+                    var p = angular.element(s.options.closeHtml),
+                        g = t.get("$compile");
+                    p.addClass("toast-close-button"), p.attr("ng-click", "close(true, $event)"), g(p)(s), o.prepend(p)
+                }
+                s.init = function() {
+                    s.options.timeOut && (u = i(s.options.timeOut)), s.options.onShown && s.options.onShown()
+                }, o.on("mouseenter", function() {
+                    l(), u && e.cancel(u)
+                }), s.tapToast = function() {
+                    angular.isFunction(s.options.onTap) && s.options.onTap(), s.options.tapToDismiss && s.close(!0)
+                }, s.close = function(t, e) {
+                    e && angular.isFunction(e.stopPropagation) && e.stopPropagation(), n.remove(s.toastId, t)
+                }, o.on("mouseleave", function() {
+                    (0 !== s.options.timeOut || 0 !== s.options.extendedTimeOut) && (s.$apply(function() {
+                        s.progressBar = s.options.progressBar
+                    }), u = i(s.options.extendedTimeOut))
+                })
+            }
+            return {
+                replace: !0,
+                templateUrl: function() {
+                    return s.templates.toast
+                },
+                controller: "ToastController",
+                link: o
+            }
+        }
+        angular.module("toastr").directive("toast", t), t.$inject = ["$injector", "$interval", "toastrConfig", "toastr"]
+    }(), angular.module("toastr").run(["$templateCache", function(t) {
+        t.put("directives/progressbar/progressbar.html", '<div class="toast-progress"></div>\n'), t.put("directives/toast/toast.html", '<div class="{{toastClass}} {{toastType}}" ng-click="tapToast()">\n  <div ng-switch on="allowHtml">\n    <div ng-switch-default ng-if="title" class="{{titleClass}}" aria-label="{{title}}">{{title}}</div>\n    <div ng-switch-default class="{{messageClass}}" aria-label="{{message}}">{{message}}</div>\n    <div ng-switch-when="true" ng-if="title" class="{{titleClass}}" ng-bind-html="title"></div>\n    <div ng-switch-when="true" class="{{messageClass}}" ng-bind-html="message"></div>\n  </div>\n  <progress-bar ng-if="progressBar"></progress-bar>\n</div>\n')
+    }]);
+
+</script>
+
+
+<script>
+    ! function(a, b) {
+        "use strict";
+        "function" == typeof define && define.amd ? define([], function() {
+            return b.apply(a)
+        }) : "object" == typeof exports ? module.exports = b.call(a) : a.Waves = b.call(a)
+    }("object" == typeof global ? global : this, function() {
+        "use strict";
+
+        function a(a) {
+            return null !== a && a === a.window
+        }
+
+        function b(b) {
+            return a(b) ? b : 9 === b.nodeType && b.defaultView
+        }
+
+        function c(a) {
+            var b = typeof a;
+            return "function" === b || "object" === b && !!a
+        }
+
+        function d(a) {
+            return c(a) && a.nodeType > 0
+        }
+
+        function e(a) {
+            var b = m.call(a);
+            return "[object String]" === b ? l(a) : c(a) && /^\[object (HTMLCollection|NodeList|Object)\]$/.test(b) && a.hasOwnProperty("length") ? a : d(a) ? [a] : []
+        }
+
+        function f(a) {
+            var c, d, e = {
+                    top: 0,
+                    left: 0
+                },
+                f = a && a.ownerDocument;
+            return c = f.documentElement, "undefined" != typeof a.getBoundingClientRect && (e = a.getBoundingClientRect()), d = b(f), {
+                top: e.top + d.pageYOffset - c.clientTop,
+                left: e.left + d.pageXOffset - c.clientLeft
+            }
+        }
+
+        function g(a) {
+            var b = "";
+            for (var c in a) a.hasOwnProperty(c) && (b += c + ":" + a[c] + ";");
+            return b
+        }
+
+        function h(a, b, c) {
+            if (c) {
+                c.classList.remove("waves-rippling");
+                var d = c.getAttribute("data-x"),
+                    e = c.getAttribute("data-y"),
+                    f = c.getAttribute("data-scale"),
+                    h = c.getAttribute("data-translate"),
+                    i = Date.now() - Number(c.getAttribute("data-hold")),
+                    j = 350 - i;
+                0 > j && (j = 0), "mousemove" === a.type && (j = 150);
+                var k = "mousemove" === a.type ? 2500 : o.duration;
+                setTimeout(function() {
+                    var a = {
+                        top: e + "px",
+                        left: d + "px",
+                        opacity: "0",
+                        "-webkit-transition-duration": k + "ms",
+                        "-moz-transition-duration": k + "ms",
+                        "-o-transition-duration": k + "ms",
+                        "transition-duration": k + "ms",
+                        "-webkit-transform": f + " " + h,
+                        "-moz-transform": f + " " + h,
+                        "-ms-transform": f + " " + h,
+                        "-o-transform": f + " " + h,
+                        transform: f + " " + h
+                    };
+                    c.setAttribute("style", g(a)), setTimeout(function() {
+                        try {
+                            b.removeChild(c)
+                        } catch (a) {
+                            return !1
+                        }
+                    }, k)
+                }, j)
+            }
+        }
+
+        function i(a) {
+            if (q.allowEvent(a) === !1) return null;
+            for (var b = null, c = a.target || a.srcElement; null !== c.parentElement;) {
+                if (c.classList.contains("waves-effect") && !(c instanceof SVGElement)) {
+                    b = c;
+                    break
+                }
+                c = c.parentElement
+            }
+            return b
+        }
+
+        function j(a) {
+            var b = i(a);
+            if (null !== b) {
+                if (b.disabled || b.getAttribute("disabled") || b.classList.contains("disabled")) return;
+                if (q.registerEvent(a), "touchstart" === a.type && o.delay) {
+                    var c = !1,
+                        d = setTimeout(function() {
+                            d = null, o.show(a, b)
+                        }, o.delay),
+                        e = function(e) {
+                            d && (clearTimeout(d), d = null, o.show(a, b)), c || (c = !0, o.hide(e, b))
+                        },
+                        f = function(a) {
+                            d && (clearTimeout(d), d = null), e(a)
+                        };
+                    b.addEventListener("touchmove", f, !1), b.addEventListener("touchend", e, !1), b.addEventListener("touchcancel", e, !1)
+                } else o.show(a, b), n && (b.addEventListener("touchend", o.hide, !1), b.addEventListener("touchcancel", o.hide, !1)), b.addEventListener("mouseup", o.hide, !1), b.addEventListener("mouseleave", o.hide, !1)
+            }
+        }
+        var k = k || {},
+            l = document.querySelectorAll.bind(document),
+            m = Object.prototype.toString,
+            n = "ontouchstart" in window,
+            o = {
+                duration: 750,
+                delay: 200,
+                show: function(a, b, c) {
+                    if (2 === a.button) return !1;
+                    b = b || this;
+                    var d = document.createElement("div");
+                    d.className = "waves-ripple waves-rippling", b.appendChild(d);
+                    var e = f(b),
+                        h = 0,
+                        i = 0;
+                    "touches" in a && a.touches.length ? (h = a.touches[0].pageY - e.top, i = a.touches[0].pageX - e.left) : (h = a.pageY - e.top, i = a.pageX - e.left), i = i >= 0 ? i : 0, h = h >= 0 ? h : 0;
+                    var j = "scale(" + b.clientWidth / 100 * 3 + ")",
+                        k = "translate(0,0)";
+                    c && (k = "translate(" + c.x + "px, " + c.y + "px)"), d.setAttribute("data-hold", Date.now()), d.setAttribute("data-x", i), d.setAttribute("data-y", h), d.setAttribute("data-scale", j), d.setAttribute("data-translate", k);
+                    var l = {
+                        top: h + "px",
+                        left: i + "px"
+                    };
+                    d.classList.add("waves-notransition"), d.setAttribute("style", g(l)), d.classList.remove("waves-notransition"), l["-webkit-transform"] = j + " " + k, l["-moz-transform"] = j + " " + k, l["-ms-transform"] = j + " " + k, l["-o-transform"] = j + " " + k, l.transform = j + " " + k, l.opacity = "1";
+                    var m = "mousemove" === a.type ? 2500 : o.duration;
+                    l["-webkit-transition-duration"] = m + "ms", l["-moz-transition-duration"] = m + "ms", l["-o-transition-duration"] = m + "ms", l["transition-duration"] = m + "ms", d.setAttribute("style", g(l))
+                },
+                hide: function(a, b) {
+                    b = b || this;
+                    for (var c = b.getElementsByClassName("waves-rippling"), d = 0, e = c.length; e > d; d++) h(a, b, c[d])
+                }
+            },
+            p = {
+                input: function(a) {
+                    var b = a.parentNode;
+                    if ("i" !== b.tagName.toLowerCase() || !b.classList.contains("waves-effect")) {
+                        var c = document.createElement("i");
+                        c.className = a.className + " waves-input-wrapper", a.className = "waves-button-input", b.replaceChild(c, a), c.appendChild(a);
+                        var d = window.getComputedStyle(a, null),
+                            e = d.color,
+                            f = d.backgroundColor;
+                        c.setAttribute("style", "color:" + e + ";background:" + f), a.setAttribute("style", "background-color:rgba(0,0,0,0);")
+                    }
+                },
+                img: function(a) {
+                    var b = a.parentNode;
+                    if ("i" !== b.tagName.toLowerCase() || !b.classList.contains("waves-effect")) {
+                        var c = document.createElement("i");
+                        b.replaceChild(c, a), c.appendChild(a)
+                    }
+                }
+            },
+            q = {
+                touches: 0,
+                allowEvent: function(a) {
+                    var b = !0;
+                    return /^(mousedown|mousemove)$/.test(a.type) && q.touches && (b = !1), b
+                },
+                registerEvent: function(a) {
+                    var b = a.type;
+                    "touchstart" === b ? q.touches += 1 : /^(touchend|touchcancel)$/.test(b) && setTimeout(function() {
+                        q.touches && (q.touches -= 1)
+                    }, 500)
+                }
+            };
+        return k.init = function(a) {
+            var b = document.body;
+            a = a || {}, "duration" in a && (o.duration = a.duration), "delay" in a && (o.delay = a.delay), n && (b.addEventListener("touchstart", j, !1), b.addEventListener("touchcancel", q.registerEvent, !1), b.addEventListener("touchend", q.registerEvent, !1)), b.addEventListener("mousedown", j, !1)
+        }, k.attach = function(a, b) {
+            a = e(a), "[object Array]" === m.call(b) && (b = b.join(" ")), b = b ? " " + b : "";
+            for (var c, d, f = 0, g = a.length; g > f; f++) c = a[f], d = c.tagName.toLowerCase(), -1 !== ["input", "img"].indexOf(d) && (p[d](c), c = c.parentElement), -1 === c.className.indexOf("waves-effect") && (c.className += " waves-effect" + b)
+        }, k.ripple = function(a, b) {
+            a = e(a);
+            var c = a.length;
+            if (b = b || {}, b.wait = b.wait || 0, b.position = b.position || null, c)
+                for (var d, g, h, i = {}, j = 0, k = {
+                        type: "mousedown",
+                        button: 1
+                    }, l = function(a, b) {
+                        return function() {
+                            o.hide(a, b)
+                        }
+                    }; c > j; j++)
+                    if (d = a[j], g = b.position || {
+                            x: d.clientWidth / 2,
+                            y: d.clientHeight / 2
+                        }, h = f(d), i.x = h.left + g.x, i.y = h.top + g.y, k.pageX = i.x, k.pageY = i.y, o.show(k, d), b.wait >= 0 && null !== b.wait) {
+                        var m = {
+                            type: "mouseup",
+                            button: 1
+                        };
+                        setTimeout(l(m, d), b.wait)
+                    }
+        }, k.calm = function(a) {
+            a = e(a);
+            for (var b = {
+                    type: "mouseup",
+                    button: 1
+                }, c = 0, d = a.length; d > c; c++) o.hide(b, a[c])
+        }, k.displayEffect = function(a) {
+            k.init(a)
+        }, k
+    });
+
+</script>
+
+<script>
+    Waves.attach('.item', []);
+    Waves.attach('.back', ['waves-button', 'waves-float']);
+    Waves.init();
+
+</script>
+
+<script>
+    (function() {
+        'use strict';
+
+        angular.module('jedi', ['toastr', 'ngAnimate', 'ngResource', 'ui.router'])
+
+        .config(['$stateProvider', function($stateProvider) {
+
+            $stateProvider
+            .state('home', {
+                url: '/',
+                template: '',
+                controller: 'View',
+                controllerAs: 'vm',
+                resolve: {
+                    status: ['dataservice', function (dataservice) {
+                        return dataservice.viewActive = false;
+                    }],
+                    type: ['dataservice', function (dataservice) {
+                        return dataservice.activeType = 'none';
+                    }]
+                }
+
+            })
+            .state('macro', {
+                url: '/macro/:ID',
+                template: '<div ng-if="macro.id" class="selection"><h1>{{macro.title}}</h1><p>ID: {{macro.id}}</p><p>{{macro.content}}</p></div><div ng-if="!(macro.id)" class="item-loading"><img src="/files/theme/ring-alt.svg"/></div><script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-71989821-1", "auto");ga("send", "pageview")<\/script>',
+                controller: 'View',
+                controllerAs: 'vm',
+                resolve: {
+                    status: ['dataservice', function (dataservice) {
+                        return dataservice.viewActive = true;
+                    }],
+                    type: ['dataservice', function (dataservice) {
+                        return dataservice.activeType = 'macro';
+                    }]
+                }
+
+            })
+            .state('article', {
+                url: '/article/:ID',
+                template: '<div class="selection"><h1>{{article.title}}</h1><p>Public Article: <a href="{{article.url}}" target="_blank">{{article.url}}</a></p><p>ID: {{article.id}}</p><p ng-bind-html="article.body"></p></div><div ng-if="!(article.id)" class="item-loading"><img src="/files/theme/ring-alt.svg"/></div><script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-71989821-1", "auto");ga("send", "pageview");<\/script>',
+                controller: 'View',
+                controllerAs: 'vm',
+                resolve: {
+                    status: ['dataservice', function (dataservice) {
+                        return dataservice.viewActive = true;
+                    }],
+                    type: ['dataservice', function (dataservice) {
+                        return dataservice.activeType = 'help';
+                    }]
+                }
+            })
+            .state('bug', {
+                url: '/bug/:ID',
+                template: '<div class="selection"><h1>{{bug.title}}</h1><p>ID: {{bug.id}}<br> LINK: {{bug.link}}<br> DATE CREATED: {{bug.date}}<br> STATUS: {{bug.status}}</p><span ng-if="bug.notes.length > 0">NOTES: {{bug.notes}}</span></div><div ng-if="!(bug.id)" class="item-loading"><img src="/files/theme/ring-alt.svg"/></div><script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-71989821-1", "auto");ga("send", "pageview");<\/script>',
+                    controller: 'View',
+                    controllerAs: 'vm',
+                    resolve: {
+                        status: ['dataservice', function(dataservice) {
+                            return dataservice.viewActive = true;
+                        }],
+                        type: ['dataservice', function(dataservice) {
+                            return dataservice.activeType = 'bug';
+                        }]
+                    }
+
+                })
+
+        }]);
+
+        angular.module('jedi')
+            .factory('exception', exception);
+
+
+        exception.$inject = ['logger'];
+
+        function exception(logger) {
+            var service = {
+                catcher: catcher
+            };
+            return service;
+
+            function catcher(message) {
+                return function(reason) {
+                    logger.error(message, reason);
+                };
+            }
+        };
+
+        angular
+            .module('jedi')
+            .factory('dataservice', dataservice);
+
+        dataservice.$inject = ['$q', '$http', 'logger', 'exception', '$resource'];
+
+        function dataservice($q, $http, logger, exception, $resource) {
+            var service = {
+                getMacros: getMacros,
+                //            getMacro: getMacro,
+                getArticles: getArticles,
+                getArticle: getArticle,
+                getBugs: getBugs,
+                //            getBug: getBug,
+                activeType: 'none',
+                viewActive: false,
+                //temp fix
+                data: {}
+            };
+
+            return service;
+            /////////////////////
+
+            function getMacros() {
+                return $http.get("https://wbzendesk-api.herokuapp.com/api/macros")
+                    .then(getMacrosComplete)
+                    .catch(function(message) {
+                        exception.catcher('Failed to getMacros')(message);
+                    });
+
+                function getMacrosComplete(response) {
+                    logger.success('Done', '', 'Macros Search');
+                    var data = response.data;
+                    return data;
+                }
+            };
+
+            function getArticles() {
+
+
+                var page1 = $http.get("https://weebly.zendesk.com/api/v2/help_center/articles.json?page=1&per_page=100"),
+                    page2 = $http.get("https://weebly.zendesk.com/api/v2/help_center/articles.json?page=2&per_page=100")
+
+
+                return $q.all([page1, page2])
+                    .then(getArticlesComplete)
+                    .catch(function(message) {
+                        exception.catcher('Failed to getArticles')(message);
+                    });
+
+                function getArticlesComplete(response) {
+                    logger.success('Done', '', 'Article Search');
+                    var status = response[1].status;
+                    response[0].data.articles.push.apply(response[0].data.articles, response[1].data.articles);
+                    var articlesArray = response[0].data.articles;
+                    return articlesArray;
+                }
+
+
+            };
+
+            function getArticle(articleID) {
+                service.viewActive = true;
+                logger.info('Retrieving Article', '', '');
+
+                return $http.get("https://weebly.zendesk.com/api/v2/help_center/articles/" + articleID + ".json")
+                    .then(getArticleComplete)
+                    .catch(function(message) {
+                        exception.catcher('Failed to get Article ' + articleID)(message);
+                    });
+
+                function getArticleComplete(response) {
+                    return response.data.article;
+                }
+
+            };
+
+            function getBugs() {
+
+                return $http.get('https://wbzendesk-api.herokuapp.com/api/bugs/all')
+                    .then(getBugsComplete)
+                    .catch(function(message) {
+                        exception.catcher('Failed to getBugs')(message);
+                    });
+
+                function getBugsComplete(response) {
+                    logger.success('Done', '', 'Bugs Search');
+                    var data = response.data;
+                    return data;
+
+                }
+            };
+        };
+
+        angular
+            .module('jedi')
+            .config(function(toastrConfig) {
+                angular.extend(toastrConfig, {
+                    positionClass: 'toast-bottom-right'
+                })
+            })
+            .factory('logger', logger);
+
+        logger.$inject = ['$log', 'toastr'];
+
+        function logger($log, toastr) {
+            var service = {
+                showToasts: true,
+
+                error: error,
+                info: info,
+                success: success,
+                warning: warning,
+
+                // straight to console; bypass toastr
+                log: $log.log
+            };
+
+            return service;
+            /////////////////////
+
+            function error(message, data, title) {
+                toastr.error(message, title);
+                $log.error('Error: ' + message, data);
+            }
+
+            function info(message, data, title) {
+                toastr.info(message, title);
+                $log.info('Info: ' + message, data);
+            }
+
+            function success(message, data, title) {
+                toastr.success(message, title);
+                $log.info('Success: ' + message, data);
+            }
+
+            function warning(message, data, title) {
+                toastr.warning(message, title);
+                $log.warn('Warning: ' + message, data);
+            }
+        };
+
+        angular
+            .module('jedi')
+            .controller('Macro', ['$scope', 'dataservice', 'logger', '$sce', '$stateParams', macro]);
+
+        function macro($scope, dataservice, logger, $sce, $stateParams) {
+            $scope.loading = true;
+            $scope.macroObject = [];
+            $scope.macros = [];
+            $scope.search = {};
+            $scope.macro = {};
+            $scope.constructMacros = constructMacros;
+
+
+            $scope.constructMacros();
+
+            $scope.$watch(function() {
+                return dataservice.activeType
+            }, function() {
+                if (dataservice.activeType == 'macro' && $scope.macros.length > 0) {
+                    $scope.macros.forEach(function(element) {
+                        if (element.id == $stateParams.ID) {
+                            dataservice.data = element;
+                        }
+                    })
+                }
+            }, true)
+
+            /////////////////////////////////////
+
+            function constructMacros() {
+                console.log('Starting Constructor');
+
+                dataservice.getMacros().then(function(data) {
+                    $scope.macroObject = data;
+                    $scope.loading = false;
+
+
+                    $scope.macroObject.forEach(setValues);
+                })
+
+                function setValues(element, index) {
+                    var macro = {};
+                    var contentObj = search("comment_value");
+                    macro.categories = search("custom_fields_23452737");
+                    macro.title = element.title;
+                    macro.url = element.url;
+                    macro.id = element.id;
+
+
+                    if (!contentObj || element.actions[0].field !== 'status' || search("assignee_id") === "773587783") {
+                        return;
+                    };
+
+
+                    function search(field) {
+                        for (var i = 0; i < element.actions.length; i++) {
+                            if (element.actions[i].field == field) {
+                                return element.actions[i].value;
+                            }
+                        }
+                    };
+
+                    if (angular.isArray(contentObj)) {
+                        macro.content = $sce.trustAsHtml(contentObj[1]);
+                    } else {
+                        macro.content = $sce.trustAsHtml(contentObj);
+                    };
+
+                    $scope.macros.push(macro);
+                    if (dataservice.activeType == 'macro' && $stateParams.ID == macro.id) {
+                        dataservice.data = macro;
+                    }
+
+                };
+            };
+        };
+        angular
+            .module('jedi')
+            .controller('Bugs', ['$scope', 'dataservice', '$stateParams', bugs]);
+
+        function bugs($scope, dataservice, $stateParams) {
+            var bugs = this;
+
+            $scope.bugs = [];
+            $scope.loading = true;
+            $scope.constructBugs = constructBugs;
+
+            $scope.$watch(function() {
+                return dataservice.activeType
+            }, function() {
+                if (dataservice.activeType == 'bug' && $scope.bugs.length > 0) {
+                    $scope.bugs.forEach(function(element) {
+                        if (element.id == $stateParams.ID) {
+                            dataservice.data = element;
+                        }
+                    })
+                }
+            }, true)
+
+            $scope.constructBugs();
+            //////////////////////////////
+
+
+            function constructBugs() {
+                var bugs = dataservice.getBugs().then(setValues);
+
+                function setValues(bugsArray) {
+                    $scope.loading = false;
+                    bugsArray.forEach(renameBug);
+
+                    function renameBug(element, index) {
+                        if (index < 1 || element.workflow === 'closed') {
+                            return;
+                        } else {
+                            var bug = {};
+                        bug.id = element.scoped_id;
+                        bug.link = element.url;
+                        bug.title = element.title;
+                        bug.date = element.created_at;
+                        bug.author = element.created_by;
+                        bug.notes = element.description;
+                        bug.status = element.workflow; 
+                        $scope.bugs.push(bug);
+                        if (dataservice.activeType == 'bug' && $stateParams.ID == bug.id) {
+                            dataservice.data = bug;
+                        }
+                        }
+
+                    }
+
+                }
+            }
+
+        };
+        angular
+            .module('jedi')
+            .controller('Home', ['$scope', 'logger', '$stateParams', 'dataservice', home]);
+
+        function home($scope, logger, $stateParams, dataservice) {
+            var home = this;
+            home.selectItem = selectItem;
+            home.back = back;
+            home.search = {
+                limitMacro: 8,
+                limitHelp: 8,
+                limitBugs: 8,
+                input: ''
+            };
+            home.searchField;
+            home.backButton;
+            home.viewMore = viewMore;
+
+            $scope.$watch(
+                function() {
+                    return dataservice.viewActive;
+                },
+                function() {
+                    if (dataservice.viewActive) {
+                        selectItem();
+                    } else {
+                        back();
+                    }
+                }, true)
+
+            ///////////////////////////
+
+            function selectItem() {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
+                $('.view-selection').addClass('active');
+                $('.home-results').addClass('inactive');
+                home.backButton = true;
+                home.searchField = false;
+            }
+
+
+            function back() {
+                home.backButton = false;
+                home.searchField = true;
+                $('.view-selection').removeClass('active');
+                $('.home-results').removeClass('inactive');
+
+            }
+
+            function viewMore(type) {
+                switch (type) {
+                    case "macro":
+                        home.search.limitMacro += 10;
+                        break;
+                    case "help":
+                        home.search.limitHelp += 10;
+                        break;
+                    case "bug":
+
+                        home.search.limitBugs += 10;
+                        break;
+                    default:
+                        logger.error('Case Not selected', '', 'Error');
+                }
+            }
+
+
+        };
+        angular
+            .module('jedi')
+            .controller('Article', ['$scope', 'dataservice', '$sce', '$stateParams', article]);
+
+        function article($scope, dataservice, $sce, $stateParams) {
+            $scope.articleArray;
+            $scope.loading = true;
+            $scope.articleCategories = [];
+            $scope.categoryName = categoryName;
+            $scope.changeCategory = changeCategories;
+            $scope.constructArticles = constructArticles;
+            $scope.search = {};
+            $scope.article = {};
+            $scope.articles = [];
+            $scope.constructArticles();
+
+
+            ////////////////////////////////////////
+
+
+            function constructArticles() {
+                $scope.articlesArray = dataservice.getArticles()
+                    .then(function(articlesArray) {
+                        $scope.loading = false;
+                        articlesArray.forEach(setValues);
+                        setCategories(articlesArray);
+                    });
+
+                function setCategories(articlesArray) {
+                    for (var i = 0; i < articlesArray.length; i++) {
+                        if (articlesArray[i].label_names == undefined) {
+                            return;
+                        }
+                        var categories = articlesArray[i].label_names;
+
+                        categories.forEach(function(element, index, array) {
+                            if ($scope.articleCategories.indexOf(element) < 0 && !(element === undefined || element === "")) {
+                                $scope.articleCategories.push(element);
+                            } else
+                            if ($scope.articleCategories.indexOf(element) < 0 && (element === undefined || element === "")) {
+                                element = "other";
+                                console.log(element);
+                                $scope.articleCategories.push(element);
+                            }
+
+                        });
+                    };
+
+                };
+            };
+
+            function setValues(element, index) {
+                element.body = element.body.replace(/\/\/hc\/en-us\//g, '//hc.weebly.com/hc/en-us/');
+
+                var article = {};
+                article.categories = element.label_names;
+                article.title = element.title;
+                article.url = element.html_url;
+                article.id = element.id;
+                article.body = $sce.trustAsHtml(element.body);
+
+                $scope.articles.push(article);
+
+            };
+
+            function categoryName(category) {
+                var nameFixed = category.replace(/\_/g, ' ');
+                return nameFixed;
+            };
+
+
+            function changeCategories(category) {
+                if (category === $scope.search.category) {
+                    $scope.search.category = '';
+                } else {
+                    $scope.search.category = category;
+                    window.scrollTo(0, 0);
+                };
+            };
+        };
+        angular
+            .module('jedi')
+            .controller('View', ['$scope', 'dataservice', 'logger', '$sce', '$stateParams', view]);
+
+        function view($scope, dataservice, logger, $sce, $stateParams) {
+            $scope.article = {};
+            $scope.macro = {};
+            $scope.bug = {};
+            $scope.getArticle = {};
+            $scope.getArticle = getArticle;
+
+            if ($stateParams.ID && dataservice.activeType == 'help') {
+                $scope.getArticle($stateParams.ID);
+            }
+
+            $scope.$watch(
+                function() {
+                    return dataservice.data;
+                },
+                function() {
+                    if ($stateParams.ID && dataservice.activeType == 'macro' && dataservice.data != {}) {
+                        $scope.macro = dataservice.data;
+                    } else if ($stateParams.ID && dataservice.activeType == 'bug' && dataservice.data != {}) {
+                        $scope.bug = dataservice.data;
+                    };
+                },
+                true
+            )
+
+            /////////////////////////////////
+
+            function getArticle(articleID) {
+                dataservice.getArticle(articleID)
+                    .then(function(article) {
+                        article.body = article.body.replace(/\/\/hc\/en-us\//g, '//hc.weebly.com/hc/en-us/');
+
+                        var newArticle = {};
+                        newArticle.categories = article.label_names;
+                        newArticle.title = article.title;
+                        newArticle.url = article.html_url;
+                        newArticle.id = article.id;
+                        newArticle.body = $sce.trustAsHtml(article.body);
+
+                        $scope.article = newArticle;
+                    });
+            };
+        };
+
+    })();
+
+</script>
