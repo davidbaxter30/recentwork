@@ -48,10 +48,10 @@ I am a huge fan of SASS and Jade as far as preprocessors go for HTML/CSS. SASS r
 
 ### Things I'm Excited about and actively studying. 
 
--More Angular Of Course! 
--Testing with jasmine and protractor
--Generally writting clean code and organization
--Patterns in Javascript and Angular. 
+- More Angular Of Course! 
+- Testing with jasmine and protractor
+- Generally writting clean code and organization
+- Patterns in Javascript and Angular. 
 
 
 ### Things I'm Excited about and not actively studying. 
