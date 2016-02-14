@@ -34,29 +34,3 @@ To run use
 
 When finished I hope it will more closely follow the style guide that I like to use. 
 https://github.com/johnpapa/angular-styleguide
-
-
-## Interests and future projects 
-
-
-I am a huge fan of SASS and Jade as far as preprocessors go for HTML/CSS. SASS really helps with organizing the css and keeping it clean and minimal. I am just as comfortable writing with plain ol HTML/CSS as well though. 
-
-- http://sass-lang.com/
-- http://jade-lang.com/
-
-
-
-### Things I'm Excited about and actively studying. 
-
-- More Angular Of Course! 
-- Testing with jasmine and protractor
-- Generally writting clean code and organization
-- Patterns in Javascript and Angular. 
-
-
-### Things I'm Excited about and not actively studying. 
-
-
-- mongoDB
-- react
-- Ionic.io
